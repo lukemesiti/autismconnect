@@ -7,6 +7,9 @@ gem 'rails', '4.0.2'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 
+# needed to get client id and client secret
+gem 'dotenv'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
