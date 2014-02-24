@@ -12,6 +12,9 @@ gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+# acts-as-taggable gem - to manage tags added to events, articles, links or documents:
+gem 'acts-as-taggable-on'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
