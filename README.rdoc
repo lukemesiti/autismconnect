@@ -1,4 +1,4 @@
-autismconnect
+# autismconnect
 =============
 
 ## WDI Project 2 -- Autism Connect
@@ -9,4 +9,4 @@ Autism Connect aims to bring members of the Autism community together through ev
 
 
 
-_Autism Connect is still a work in progress. Check here for updates to come._
+* Autism Connect is still a work in progress. Check here for updates to come. *
