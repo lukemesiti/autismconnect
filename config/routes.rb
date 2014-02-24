@@ -1,11 +1,8 @@
 Autismconnect::Application.routes.draw do
 
-  get "articles/index"
-  get "articles/show"
-  get "articles/create"
-  get "articles/update"
-  get "articles/destroy"
   resources :events
+  resources :links
+  resources :articles
 
   devise_for :users
 

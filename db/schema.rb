@@ -43,6 +43,18 @@ ActiveRecord::Schema.define(version: 20140224044749) do
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
+
+  create_table "links", force: true do |t|
+    t.string   "name"
+    t.string   "url"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["user_id"], name: "index_links_on_user_id", using: :btree
+
+
   create_table "roles", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
