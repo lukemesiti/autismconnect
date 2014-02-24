@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140224034746) do
 
-
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,7 +31,6 @@ ActiveRecord::Schema.define(version: 20140224034746) do
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
-
 
   create_table "roles", force: true do |t|
     t.string   "name"
