@@ -1,0 +1,17 @@
+diff --cc Gemfile.lock
+index 0b19120,78e6ddb..0000000
+--- a/Gemfile.lock
++++ b/Gemfile.lock
+@@@ -120,7 -122,7 +124,8 @@@ PLATFORM
+    ruby
+  
+  DEPENDENCIES
+ +  acts-as-taggable-on
++   carrierwave
+    coffee-rails (~> 4.0.0)
+    devise
+    jbuilder (~> 1.2)
+diff --cc db/schema.rb
+index 3447703,f4885eb..0000000
+--- a/db/schema.rb
++++ b/db/schema.rb

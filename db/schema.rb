@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 20140224113828) do
 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id", using: :btree
 
+  create_table "documents", force: true do |t|
+    t.string   "name"
+    t.string   "kind"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "asset"
+  end
+
+  add_index "documents", ["user_id"], name: "index_documents_on_user_id", using: :btree
+
   create_table "events", force: true do |t|
     t.string   "name"
     t.string   "address"
