@@ -1,29 +1,49 @@
 require 'test_helper'
 
 class LinksControllerTest < ActionController::TestCase
+  setup do
+    @link = links(:one)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
+    assert_not_nil assigns(:links)
   end
 
-  test "should get show" do
-    get :show
+  test "should get new" do
+    get :new
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
+  test "should create link" do
+    assert_difference('Link.count') do
+      post :create, link: { name: @link.name, url: @link.url, user_id: @link.user_id }
+    end
+
+    assert_redirected_to link_path(assigns(:link))
+  end
+
+  test "should show link" do
+    get :show, id: @link
     assert_response :success
   end
 
-  test "should get update" do
-    get :update
+  test "should get edit" do
+    get :edit, id: @link
     assert_response :success
   end
 
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
+  test "should update link" do
+    patch :update, id: @link, link: { name: @link.name, url: @link.url, user_id: @link.user_id }
+    assert_redirected_to link_path(assigns(:link))
   end
 
+  test "should destroy link" do
+    assert_difference('Link.count', -1) do
+      delete :destroy, id: @link
+    end
+
+    assert_redirected_to links_path
+  end
 end
