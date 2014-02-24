@@ -13,6 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20140224034746) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140224034746) do
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
+
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -61,6 +63,7 @@ ActiveRecord::Schema.define(version: 20140224034746) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "role_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
