@@ -2,6 +2,8 @@ Autismconnect::Application.routes.draw do
   resources :events
 
   devise_for :users
-  root :to => "home#index"
+  root :to => "pages#home"
+
+  get ':action' => 'pages#action'
 
 end
