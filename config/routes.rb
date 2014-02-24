@@ -13,7 +13,7 @@ Autismconnect::Application.routes.draw do
   root :to => "pages#home"
 
   # SP 24/2/2014 whenever you go /<something> this will point you to pages > views > <something>.html.erb
-  get ':action' => 'pages#action'
+  get '/:action' => 'pages#action'
 
   # devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
 
