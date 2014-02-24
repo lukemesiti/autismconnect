@@ -1,12 +1,9 @@
-# autismconnect
-=============
-
-## WDI Project 2 -- Autism Connect
-### Created by Luke M (lukemesiti), Emily M (emacca), Lauren K (lukru) and Sam P (sammyjopeters)
+==WDI Project 2 -- Autism Connect
+===Created by Luke M (lukemesiti), Emily M (emacca), Lauren K (lukru) and Sam P (sammyjopeters)
 
 Autism is a web-service designed to provide a community-driven resource for parents and caregivers of Autistic individuals. 
 Autism Connect aims to bring members of the Autism community together through events and information to create a support network for all sufferes of Autism and related disorders.
 
 
 
-* Autism Connect is still a work in progress. Check here for updates to come. *
+<em>Autism Connect is still a work in progress. Check here for updates to come.</em>
