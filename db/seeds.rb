@@ -20,7 +20,7 @@ user.street_address = 'P. Sherman 42 Wallaby Way'
 user.city = 'Sydney'
 user.state = 'NSW'
 user.postcode = 2000
-user.phone_number = 5554554545
+user.phone_number = 5
 user.number_of_children = 1
 user.role = parent
 user.save
@@ -34,7 +34,7 @@ user2.city = 'Sydney'
 user2.state = 'NSW'
 user2.postcode = 2000
 user2.business_name = 'Jones Psychology Practice'
-user2.phone_number = 2220220202
+user2.phone_number = 2
 user2.website = 'http://testwebsitejones.com'
 user2.role = professional
 user2.save
@@ -52,7 +52,7 @@ event = Event.new
 event.name = "The Lion King - autism friendly performance"
 event.address = 'Capitol Theatre - 13 Campbell St, Haymarket NSW 2000'
 event.description = "Disney's THE LION KING is working closely with Autism Awareness Australia to create a friendly and supportive environment to enjoy this award-winning musical.The specially adapted performance will be suitable for individuals on the autism spectrum and their families, with trained staff on hand and dedicated quiet and activity areas should anyone need to leave their seats. Slight adjustments to the production will include reduction of any jarring sounds or lights focused into the audience."
-event.type = "entertainment"
+event.category = "entertainment"
 event.cost = 50.00
 event.dateTime = "2014-06-14 13:30:00 UTC"
 event.capacity = 2094
@@ -63,7 +63,7 @@ event2 = Event.new
 event2.name = "World Autism Awareness Day Melbourne 2014"
 event2.address = "Luna Park - 18 Lower Esplanade, ST KILDA 3182"
 event2.description = "Come along and have the chance to access Luna Park exclusively for 2 hours and for the great price of $10!There will music, exhibitors and lots of fun activities. There will also be a dove release to mark the occasion.Luna Park is close to St. Kilda Beach, Acland and Fitzroy Streets as well as the St. Kilda Botanical Gardens so there is plenty to do in the area to celebrate the day!"
-event2.type = "entertainment"
+event2.category = "entertainment"
 event2.cost = 10.00
 event2.dateTime = "2014-04-06 09:00:00 UTC"
 event2.capacity = 10000
@@ -73,7 +73,7 @@ event2.save
 event3 = Event.new
 event3.name = "World Autism Awareness Day Light It Up Blue"
 event3.description = "Each April 2, Autism Speaks celebrates Light It Up Blue along with the international autism community, in commemoration of the United Nations-sanctioned World Autism Awareness Day. Light It Up Blue is a unique global initiative that kicks-off Autism Awareness Month and helps raise awareness about autism. In honor of this historic day, many iconic landmarks, hotels, sporting venues, concert halls, museums, bridges and retail stores are among the hundreds of thousands of homes and communities that take part to Light It Up Blue."
-event3.type = "raising awareness"
+event3.category = "raising awareness"
 event3.dateTime = "2014-04-02"
 event3.website = "http://liub.autismspeaks.org/welcome"
 event3.save
