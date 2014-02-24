@@ -1,28 +1,12 @@
-== README
+autismconnect
+=============
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## WDI Project 2 -- Autism Connect
+### Created by Luke M (lukemesiti), Emily M (emacca), Lauren K (lukru) and Sam P (sammyjopeters)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Autism is a web-service designed to provide a community-driven resource for parents and caregivers of Autistic individuals. 
+Autism Connect aims to bring members of the Autism community together through events and information to create a support network for all sufferes of Autism and related disorders.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+_Autism Connect is still a work in progress. Check here for updates to come._
