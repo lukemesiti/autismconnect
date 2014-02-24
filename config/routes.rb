@@ -1,5 +1,7 @@
 Autismconnect::Application.routes.draw do
 
+  resources :documents
+
   resources :events
   resources :links
   resources :articles
