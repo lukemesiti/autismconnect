@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   has_many :events
   has_many :links
   has_many :articles
+  has_many :invites
 end
