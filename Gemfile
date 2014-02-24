@@ -5,6 +5,7 @@ gem 'rails', '4.0.2'
 
 # for authentication
 gem 'devise'
+gem 'omniauth-google-oauth2'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
