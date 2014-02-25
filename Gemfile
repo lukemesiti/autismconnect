@@ -45,6 +45,9 @@ end
 #upload file gem 
 gem 'carrierwave'
 
+#bootstrap-sass
+gem 'bootstrap-sass'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
