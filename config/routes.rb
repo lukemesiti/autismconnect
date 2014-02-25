@@ -7,7 +7,7 @@ Autismconnect::Application.routes.draw do
   resources :articles
 
 
-  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
   
   get '/profile' => 'users#show'
   get '/profile/edit' => 'users#edit'

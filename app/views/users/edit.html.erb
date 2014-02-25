@@ -1,6 +1,6 @@
 <% if @user.role.name == "parent" %>
   <h2>Editing Parent Profile</h2>
-    <%= form_for('/profile') do |f| %>
+    <%= form_for(@user, :url => '/profile', :method => "post") do |f| %>
       <% if @user.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@user.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -43,7 +43,7 @@
     <% end %>
     <% elsif @user.role.name == "professional" %>
     <h2>Editing Professional Profile</h2>
-    <%= form_for('/profile') do |f| %>
+    <%= form_for(@user, :url => '/profile', :method => "post") do |f| %>
       <% if @user.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@user.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -86,7 +86,7 @@
       </div>
       <div class="field">
         <%= f.label :website %><br>
-        <%= f.tel :website %>
+        <%= f.url_field :website %>
       </div>
       <div class="actions">
         <%= f.submit %>

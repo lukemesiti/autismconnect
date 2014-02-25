@@ -29,8 +29,8 @@ class ApplicationController < ActionController::Base
   	end
   end
   #this is a redirect to the edit user page after sign up to fill in the required fields for the details of the user
-  def after_sign_up_path_for(resource)
-    edit_user_registration_path(resource)
+  def after_sign_in_path_for(resource)
+    profile_path
   end
 
 end
