@@ -80,7 +80,7 @@ class LinksController < ApplicationController
     end
 
     def unauthorized_error
-      redirect_to links_path, :alert => "You can't touch this!"
+      redirect_to links_path, :alert => "You can't touch this link!"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
