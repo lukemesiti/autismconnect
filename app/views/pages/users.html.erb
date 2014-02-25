@@ -1,0 +1,37 @@
+<h1>Users</h1>
+<h2>Because everybody keeps typing '/users'</h2>
+
+<% @users.each do |user| %>
+
+<strong>Email:</strong><br />
+<p><%= user.email %></p>
+
+<strong>Name:</strong><br />
+<p><%= user.name %></p>
+
+<strong>State:</strong><br />
+<p><%= user.state %></p>
+
+<strong>Postcode: </strong><br />
+<p><%= user.postcode %></p>
+
+<strong>User Privelages:</strong><br />
+<p><%= user.role.name %></p>
+
+<h3>If a parent...</h3>
+<strong>Number of kids:</strong><br />
+<p><%= user.number_of_children %></p>
+
+<h3>If profesional...</h3>
+<strong>Business Name</strong><br />
+<p><%= user.business_name %></p>
+
+<strong>Practice Type</strong><br />
+<p><%= user.practice_type %></p>
+
+<strong>Website</strong><br />
+<p><%= user.website %></p>
+
+<hr>
+
+<% end %>
