@@ -79,7 +79,7 @@ class ArticlesController < ApplicationController
     end
 
     def unauthorized_error
-      redirect_to links_path, :alert => "You can't touch this article!"
+      redirect_to articles_path, :alert => "You can't touch this article!"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
