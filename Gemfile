@@ -5,6 +5,10 @@ gem 'rails', '4.0.2'
 
 # for authentication
 gem 'devise'
+gem 'omniauth-google-oauth2'
+
+# needed to get client id and client secret
+gem 'dotenv-rails'
 
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -40,6 +44,9 @@ end
 
 #upload file gem 
 gem 'carrierwave'
+
+#bootstrap-sass
+gem 'bootstrap-sass'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
