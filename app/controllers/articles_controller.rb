@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   # SP 25/02/2014 - Remove authentication from index and detail pages. Edit/destroy/create requires login.
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
 
   # GET /articles
   # GET /articles.json
@@ -21,12 +22,15 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    authorize @article
   end
 
   # POST /articles
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+
+    authorize @article
 
 
     respond_to do |format|
@@ -43,6 +47,8 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   # PATCH/PUT /articles/1.json
   def update
+    authorize @article
+
     respond_to do |format|
       if @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
@@ -57,6 +63,8 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   # DELETE /articles/1.json
   def destroy
+    authorize @article
+
     @article.destroy
     respond_to do |format|
       format.html { redirect_to articles_url }
@@ -68,6 +76,10 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       @article = Article.find(params[:id])
+    end
+
+    def unauthorized_error
+      redirect_to links_path, :alert => "You can't touch this article!"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
