@@ -10,6 +10,10 @@ class LinkPolicy
   def initialize(user, link)
     @user = user
     @link = link
+  end
+
+  def create?
+    user.role.name == "admin"
   end  
 
   def destroy?
@@ -17,19 +21,11 @@ class LinkPolicy
   end
 
   def update?
-    # if post.published == false
-    #   user == post.user
-    # else
-    #   false
-    # end
+    user == link.user
   end
 
   def edit?
-    # if post.published == false
-    #   user == post.user
-    # else
-    #   false
-    # end
+    user == link.user
   end
 
 end
