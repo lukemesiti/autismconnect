@@ -12,6 +12,15 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
+  <div>
+  <%= f.label :role_id, "set a role for this user" %>
+  <%= f.radio_button(:role_id, 10) %>
+  <%= f.label(:role_admin, "Admin") %>
+  <%= f.radio_button(:role_id, 12) %>
+  <%= f.label(:role_professional, "Professional") %>
+  <%= f.radio_button(:role_id, 11) %>
+  <%= f.label(:role_parent, "Parent") %>
+  </div>
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
