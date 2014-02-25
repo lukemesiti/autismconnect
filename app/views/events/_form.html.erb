@@ -24,8 +24,8 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
+    <%= f.label :category %><br>
+    <%= f.text_field :category %>
   </div>
   <div class="field">
     <%= f.label :cost %><br>
@@ -46,6 +46,10 @@
   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_list, "Tags - seperated by commas" %><br>
+    <%= f.text_field :tag_list %>
   </div>
   <div class="actions">
     <%= f.submit %>
