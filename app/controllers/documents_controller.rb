@@ -1,4 +1,6 @@
 class DocumentsController < ApplicationController
+  # SP 25/02/2014 - Remove authentication from index and detail pages. Edit/destroy/create requires login.
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_document, only: [:show, :edit, :update, :destroy]
 
   # GET /documents
