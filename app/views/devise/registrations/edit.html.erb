@@ -20,12 +20,18 @@
   <%= f.password_field :current_password %></div>
 
   <div><%= f.label :role_id, "set a role for this user" %>
-  <%= f.radio_button(:role_id, 10) %>
-  <%= f.label(:role_admin, "Admin") %>
+  <% if current_user.admin? %>
+    <%= f.radio_button(:role_id, 10) %>
+    <%= f.label(:role_admin, "Admin") %>
+  <% end %>
+
   <%= f.radio_button(:role_id, 12) %>
   <%= f.label(:role_professional, "Professional") %>
   <%= f.radio_button(:role_id, 11) %>
   <%= f.label(:role_parent, "Parent") %>
+
+
+
   </div>
 
   <div><%= f.submit "Update" %></div>
