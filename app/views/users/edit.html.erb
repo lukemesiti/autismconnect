@@ -1,47 +1,50 @@
-<% if @user.role.name == "parent" %>
-  <h2>Editing Parent Profile</h2>
-    <%= form_for(@user, :url => '/profile', :method => "post") do |f| %>
-      <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="form-fields-sign">
+  <% if @user.role.name == "parent" %>
+    <h2>Editing Parent Profile</h2>
+      <%= form_for(@user, :url => '/profile', :method => "post") do |f| %>
+        <% if @user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@user.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-          <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-          </ul>
+            <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :name %><br>
+          <%= f.text_field :name, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :street_address %><br>
+          <%= f.text_field :street_address, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :city %><br>
+          <%= f.text_field :city, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :state %><br>
+          <%= f.text_field :state, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :postcode %><br>
+          <%= f.number_field :postcode, :class => "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :number_of_children %><br>
+          <%= f.number_field :number_of_children, :class => "form-control" %>
+        </div>
+        <div class="actions form-group">
+          <%= f.submit :class => "btn btn-default" %>
         </div>
       <% end %>
-
-      <div class="form-group">
-        <%= f.label :name %><br>
-        <%= f.text_field :name, :class => "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :street_address %><br>
-        <%= f.text_field :street_address, :class => "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :city %><br>
-        <%= f.text_field :city, :class => "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :state %><br>
-        <%= f.text_field :state, :class => "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :postcode %><br>
-        <%= f.number_field :postcode, :class => "form-control" %>
-      </div>
-      <div class="form-group">
-        <%= f.label :number_of_children %><br>
-        <%= f.number_field :number_of_children, :class => "form-control" %>
-      </div>
-      <div class="actions form-group">
-        <%= f.submit :class => "btn btn-default" %>
-      </div>
-    <% end %>
-    <% elsif @user.role.name == "professional" %>
+</div>
+<div class="form-fields-sign">
+  <% elsif @user.role.name == "professional" %>
     <h2>Editing Professional Profile</h2>
     <%= form_for(@user, :url => '/profile', :method => "post") do |f| %>
       <% if @user.errors.any? %>
@@ -96,5 +99,5 @@
         <%= f.submit %>
       </div>
     <% end %>
-
-<% end %>
+  <% end %>
+</div>
