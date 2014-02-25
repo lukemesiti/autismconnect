@@ -1,20 +1,26 @@
 <div class="nav_links">
   <ul>
-    <li><%= link_to 'Home', root_path %></li>
-    <li><%= link_to 'Events', events_path %></li>
-    <li><%= link_to 'Articles', articles_path %></li>
-    <li><%= link_to 'Links', links_path %></li>
+  	<!-- Forem is actually a seperate App to the autism app! Becaus of this, when we have a partial that appears in both, we now need to specify what app each link goes to. In this case, "normal" links are prefixed with "main_app", and forem links have "forem" prefixed. -->
+    <li><%= link_to 'Home', main_app.root_path %></li>
+    <li><%= link_to 'Events', main_app.events_path %></li>
+    <li><%= link_to 'Articles', main_app.articles_path %></li>
+    <li><%= link_to 'Links', main_app.links_path %></li>
+    <li><%= link_to 'Forum', forem.root_path %></li>
   </ul>
 
 
+  <!-- The login box contains links that will let you perform actions relating to the app, and actions relating to the forum, for example - here admins can access posts to moderate. -->
   <p class="navbar-text pull-right">
 	<% if user_signed_in? %>
-	  Logged in as <strong><%= current_user.email %></strong>.
-	  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-	<% else %>
-	  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-	  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-	<% end %>
+	  Logged in as <strong><%= link_to current_user.email, main_app.edit_user_registration_path %></strong>.
+      	<%= link_to 'Edit profile', main_app.edit_user_registration_path, :class => 'navbar-link' %> |
+      | <%= link_to "Logout", main_app.destroy_user_session_path, :method => :delete %>
+      <% if current_user.forem_admin %>
+          | <%= link_to "Administrate", forem.admin_root_url %>
+      <% end %>
+    <% else %>
+      <%= link_to "Sign up", main_app.new_user_registration_path %>
+      | <%= link_to "Sign in", main_app.new_user_session_path %>
+    <% end %>
   </p>
 </div>

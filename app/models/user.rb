@@ -50,6 +50,18 @@ class User < ActiveRecord::Base
   end
 
 
+  #forem ..ahem, forum helpers (It's used in the gem code)
+  def to_s
+    name
+  end
+
+  #this code was supposedly required by forem but causes a stack overflow!
+  # def email
+  #   email
+  # end
+
+
+
 
 
 end

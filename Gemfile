@@ -3,6 +3,15 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
+#forem gem for forum functionality
+gem 'forem', :github => "radar/forem", :branch => "rails4"
+
+#pagination gem --> originally to support forem but s'pose it could be used for more pagination too!
+gem 'kaminari', '0.15.1'
+
+#use cancan authentication gem because forem doesn't use PUNDIT yet dafaq?!
+gem 'cancan', git: 'https://github.com/nukturnal/cancan.git'
+
 # for authentication
 gem 'devise'
 gem 'omniauth-google-oauth2'
