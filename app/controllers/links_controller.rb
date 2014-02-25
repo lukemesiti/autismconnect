@@ -2,6 +2,7 @@ class LinksController < ApplicationController
   # SP 25/02/2014 - Remove authentication from index and detail pages. Edit/destroy/create requires login.
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_link, only: [:show, :edit, :update, :destroy]
+  rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_link_destroy
 
   # GET /links
   # GET /links.json
@@ -56,6 +57,8 @@ class LinksController < ApplicationController
   # DELETE /links/1
   # DELETE /links/1.json
   def destroy
+    authorize @link
+
     @link.destroy
     respond_to do |format|
       format.html { redirect_to links_url }
@@ -67,6 +70,10 @@ class LinksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_link
       @link = Link.find(params[:id])
+    end
+
+    def unauthorized_link_destroy
+      redirect_to links_path, :alert => "You aren't authorized to remove this link"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
