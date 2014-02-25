@@ -8,19 +8,35 @@ class EventPolicy
   end
 
   def create?
-    user.role.name == "admin" || user.role.name == "professional"
+    if user.present?
+      user.role.name == "admin" || user.role.name == "professional"
+    else
+      false
+    end
   end  
 
   def destroy?
-    user == event.user || user.role.name == "admin"
+    if user.present?
+      user == event.user || user.role.name == "admin"
+    else
+      false
+    end
   end
 
   def update?
-    user == event.user || user.role.name == "admin"
+    if user.present?
+      user == event.user || user.role.name == "admin"
+    else
+      false
+    end
   end
 
   def edit?
-    user == event.user || user.role.name == "admin"
+    if user.present?
+      user == event.user || user.role.name == "admin"
+    else
+      false
+    end
   end
 
 end
