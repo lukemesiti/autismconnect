@@ -22,12 +22,15 @@ class EventsController < ApplicationController
 
   # GET /events/1/edit
   def edit
+    authorize @event
   end
 
   # POST /events
   # POST /events.json
   def create
     @event = Event.new(event_params)
+
+    authorize @event
 
     respond_to do |format|
       if @event.save
@@ -43,6 +46,8 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    authorize @event
+
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
