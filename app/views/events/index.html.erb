@@ -29,15 +29,20 @@
         <td><%= event.dateTime %></td>
         <td><%= event.capacity %></td>
         <td><%= event.website %></td>
-        <td><%= event.user %></td>
+        <td><%= event.user_id %></td>
         <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if policy(event).edit? %>
+          <td><%= link_to 'Edit', edit_event_path(event) %></td>
+        <% end %>
+        <% if policy(event).destroy? %>
+          <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Event', new_event_path %>
+<% if policy(@events).create? %>
+  <%= link_to 'New Event', new_event_path %>
+<% end %>

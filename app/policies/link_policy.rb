@@ -8,19 +8,35 @@ class LinkPolicy
   end
 
   def create?
-    user.role.name == "admin"
+    if user.present?
+      user.role.name == "admin"
+    else
+      false
+    end
   end  
 
   def destroy?
-    user == link.user
+    if user.present?
+      user == link.user
+    else
+      false
+    end
   end
 
   def update?
-    user == link.user
+    if user.present?
+      user == link.user
+    else
+      false
+    end
   end
 
   def edit?
-    user == link.user
+    if user.present?
+      user == link.user
+    else
+      false
+    end
   end
 
 end
