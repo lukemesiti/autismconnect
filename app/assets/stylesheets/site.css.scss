@@ -11,11 +11,22 @@ body {
   -mox-box-shadow: 0 8px 5px -5px #CCC;
   box-shadow: 0 8px 5px -5px #CCC;
   background: #FFFFFF;
-  height: 70px;
+  height: 80px;
+}
+
+.navbar-fixed-top a {
+  font-family: 'muliregular', Verdana, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase; 
 }
 
 .navbar-fixed-bottom {
   height: 50px;
   background: #FFFFFF;
   text-align: center;
+}
+
+.navbar-brand img {
+  width: 330px;
+  height: 55.20px;
 }
