@@ -64,6 +64,9 @@ gem 'carrierwave'
 #bootstrap-sass
 gem 'bootstrap-sass'
 
+# geocoding
+gem 'geocoder'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
