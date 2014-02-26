@@ -1,72 +1,73 @@
-
-
 <p id="notice"><%= notice %></p>
+<div class="row event-one-row">
+  <div class="event-show-one col-md-6">
+      <h1><%= @event.name %></h1>
+  
+    <p>
+      <%= image_tag @event.asset, :width => "100%"%>
+    </p>
+    <p>
+      <strong>Address:</strong>
+      <%= @event.address %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+    <p>
+      <strong>Description:</strong>
+      <%= @event.description %>
+    </p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @event.address %>
-</p>
+    <p>
+      <strong>Category:</strong>
+      <%= @event.category %>
+    </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+    <p>
+      <strong>Cost:</strong>
+      <%= @event.cost %>
+    </p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @event.category %>
-</p>
+    <p>
+      <strong>Datetime:</strong>
+      <%= @event.dateTime %>
+    </p>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @event.cost %>
-</p>
+    <p>
+      <strong>Capacity:</strong>
+      <%= @event.capacity %>
+    </p>
 
-<p>
-  <strong>Datetime:</strong>
-  <%= @event.dateTime %>
-</p>
+    <p>
+      <strong>Website:</strong>
+      <%= link_to @event.website, @event.website %>
+    </p>
 
-<p>
-  <strong>Capacity:</strong>
-  <%= @event.capacity %>
-</p>
+    <p>
+      <strong>User:</strong>
+      <%= @event.user %>
+    </p>
+    <strong>Current Tags:</strong>
+    <%= @event.tag_list %>
+  </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @event.website %>
-</p>
+  <p>
+    <strong>longitude and latitude:</strong>
+    <%= @event.longitude %>
+    <%= @event.latitude %>
+  </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @event.user %>
-</p>
-  <strong>Current Tags:</strong>
-  <%= @event.tag_list %>
-</p>
+  <%= link_to 'Edit', edit_event_path(@event), :class=> "btn btn-default" %>
+  <%= link_to 'Back', events_path, :class=> "btn btn-default" %>
 
-<p>
-  <strong>longitude and latitude:</strong>
-  <%= @event.longitude %>
-  <%= @event.latitude %>
-</p>
-
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
-
-
-<div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
-
+<div class="google-map col-md-6">
+  <div style='width: 100%;'>
+    <div id="map" style='width: 100%; height: 400px;'></div>
+  </div>
+</div>
+</div>
 <script type="text/javascript">
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: { maxZoom: 15 }, internal: {id: 'map'}}, function(){
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: { maxZoom: 15 }, internal: {id: 'map'}}, function(){
   marker = handler.addMarkers(<%= raw @hash.to_json %>);
   handler.bounds.extendWith(marker);
   handler.fitMapToBounds();
