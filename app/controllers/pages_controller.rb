@@ -12,8 +12,6 @@ class PagesController < ApplicationController
 	def about
 	end
 
-	def users
-		@users = User.all
-	end
+
 
 end
