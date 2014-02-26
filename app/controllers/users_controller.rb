@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:index, :show, :edit, :update]
   
   def index
-    @users = User.all
+    @users = policy_scope(User)
   end
 
   def show
@@ -34,5 +34,6 @@ class UsersController < ApplicationController
   def user_params
       params.require(:user).permit(:name, :street_address, :city, :state, :postcode, :number_of_children, :business_name, :practice_type, :website)
   end
+
 
 end
