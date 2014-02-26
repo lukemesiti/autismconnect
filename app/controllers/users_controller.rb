@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
 	def index
-		@users = User.all
+        role = Role.where(name: "professional").first
+		@professionals = User.where(role_id: role.id)
 	end
 
 end

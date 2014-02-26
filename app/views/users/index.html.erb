@@ -1,36 +1,35 @@
 <h1>Users</h1>
-<h2>Because everybody keeps typing '/users'</h2>
 
-<% @users.each do |user| %>
+<% @professionals.each do |professional| %>
 
 <strong>Email:</strong><br />
-<p><%= user.email %></p>
+<p><%= professional.email %></p>
 
 <strong>Name:</strong><br />
-<p><%= user.name %></p>
+<p><%= professional.name %></p>
 
 <strong>State:</strong><br />
-<p><%= user.state %></p>
+<p><%= professional.state %></p>
 
 <strong>Postcode: </strong><br />
-<p><%= user.postcode %></p>
+<p><%= professional.postcode %></p>
 
-<strong>User Privelages:</strong><br />
-<p><%= user.role_id %></p>
+<strong>professional Privelages:</strong><br />
+<p><%= professional.role_id %></p>
 
 <h3>If a parent...</h3>
 <strong>Number of kids:</strong><br />
-<p><%= user.number_of_children %></p>
+<p><%= professional.number_of_children %></p>
 
 <h3>If profesional...</h3>
 <strong>Business Name</strong><br />
-<p><%= user.business_name %></p>
+<p><%= professional.business_name %></p>
 
 <strong>Practice Type</strong><br />
-<p><%= user.practice_type %></p>
+<p><%= professional.practice_type %></p>
 
 <strong>Website</strong><br />
-<p><%= user.website %></p>
+<p><%= professional.website %></p>
 
 <hr>
 
