@@ -1,0 +1,21 @@
+ html, body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+}
+body {
+  padding-top: 10px;
+}
+.navbar-fixed-top {
+  -webkit-box-shadow: 0 8px 5px -5px #CCC;
+  -mox-box-shadow: 0 8px 5px -5px #CCC;
+  box-shadow: 0 8px 5px -5px #CCC;
+  background: #FFFFFF;
+  height: 70px;
+}
+
+.navbar-fixed-bottom {
+  height: 50px;
+  background: #FFFFFF;
+  text-align: center;
+}

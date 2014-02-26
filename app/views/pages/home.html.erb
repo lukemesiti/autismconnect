@@ -1,3 +1,33 @@
-<h1>Autism Connect</h1>
-<p>Welcome to autism connect - use the navigation to do stuff.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu risus elit. Nulla tempor, ligula sed tincidunt placerat, ante sem iaculis orci, non gravida risus urna ut leo. Suspendisse vitae suscipit libero. Sed dignissim fermentum nulla, ac mollis tortor pretium at. Nulla ipsum libero, sagittis sit amet iaculis non, volutpat eget enim. Sed luctus orci odio, at posuere est tincidunt ut. Aenean laoreet ultrices consequat. Maecenas elementum, erat ac aliquam porttitor, quam metus rutrum eros, vitae venenatis odio risus ac tortor. Cras in nibh sem. Proin sit amet elit odio. Mauris eros mi, gravida nec ligula vitae, fermentum varius massa.</p>
+<div class="welcome">
+  <div class="inner">
+    <div class="copy">
+      <p>Welcome to Autism Connect, bringing together professionals, caregivers and parents of autistic individuals. Here you will find the latest event happenings and information pertaining to Autism Spectrum Disorder. We understand that families affected by autism face challenges every day; Autism Connect makes sure you don't have to face these challenges alone. We provide a safe community allowing families to lean on one another for support, while bridging the gap between parents and professionals to improve the lives of children with autism and their families.</p>
+    </div>
+  </div>
+</div>
+
+<div class="events">
+  <div class="inner">
+    <div class="container-fluid">
+    <h1 class="center">upcoming events</h1>
+      <div class="row">
+        <% @events.each do |event| %>
+          <div class="col-md-4 col-lg-4 col-sm-4"><span class="rowtitle"><%= event.name %></span><br><br><%= event.description.truncate(300) %></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="news">
+  <div class="inner">
+    <div class="container-fluid">
+    <h1 class="center">news</h1>
+      <div class="row">
+        <% @articles.each do |article| %>
+          <div class="col-md-4 col-lg-4 col-sm-4"><span class="rowtitle"><%= article.title %></span><br><br><spanclass="rowcontent"><%= article.body.truncate(300) %></spanclass="rowcontent"></div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
