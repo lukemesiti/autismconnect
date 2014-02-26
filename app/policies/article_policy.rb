@@ -8,19 +8,35 @@ class ArticlePolicy
   end
 
   def create?
-    user.role.name == "admin"
+    if user.present?
+      user.role.name == "admin"
+    else
+      false
+    end
   end  
 
   def destroy?
-    user == article.user
+    if user.present?
+      user == article.user
+    else
+      false
+    end
   end
 
   def update?
-    user == article.user
+    if user.present?
+      user == article.user
+    else
+      false
+    end
   end
 
   def edit?
-    user == article.user
+    if user.present?
+      user == article.user
+    else
+      false
+    end
   end
 
 end
