@@ -50,6 +50,14 @@ class User < ActiveRecord::Base
   end
 
 
+  #forem ..ahem, forum helpers (It's used in the gem code)
+  def to_s
+    self.name || "blah"
+  end
+
+  
+
+
 
 
 end

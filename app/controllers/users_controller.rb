@@ -30,4 +30,8 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :street_address, :city, :state, :postcode, :number_of_children, :business_name, :practice_type, :website)
   end
 
+	def index
+		@users = User.all
+	end
+
 end

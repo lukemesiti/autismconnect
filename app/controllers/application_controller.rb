@@ -1,7 +1,14 @@
 class ApplicationController < ActionController::Base
+
+  def forem_user
+    current_user
+  end
+  helper_method :forem_user
+
   include Pundit
   
-  before_action :authenticate_user!
+  #disabled application level authentication - to allow engines to implement their own authentication rules.
+  #before_action :authenticate_user!
 
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
