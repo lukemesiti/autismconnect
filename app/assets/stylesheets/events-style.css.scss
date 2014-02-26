@@ -21,7 +21,7 @@
   background-repeat: repeat;
   position:relative;
   z-index: 1;
-  height: 400px;
+  height: 250px;
   width: 100%;
   padding-top: 55px;
 }
@@ -51,7 +51,6 @@
   font-size: 30px;
   position: relative;
   bottom: 0;
-  margin-top: 5%;
 }
 
 .event-title{
@@ -80,4 +79,23 @@
 
 .event{
   padding-top:40px;
+}
+
+.event-show-one{
+  text-align: left;
+}
+
+.event-one-row{
+  margin-left: 10%!important;
+  margin-right: 10%!important;
+  padding: 6% 0;
+}
+
+.event-show-one h1{
+  font-family: 'chunkfiveroman', serif;
+  letter-spacing: 1px;
+  font-size: 24px;
+  margin-top:0px;
+  padding:20px 0;
+  border-top:1px solid #ccc;
 }
