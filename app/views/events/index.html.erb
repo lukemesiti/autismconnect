@@ -1,52 +1,57 @@
 <div class="search-events">
   <h1>Listing events</h1>
   <%= form_tag events_path, :class=> "form-inline", :method => :get do%>
-      <div class="form-group">
-      <p><%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Enter Address" %>
+  <div class="form-group">
+    <p><%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Enter Address" %>
       <%= submit_tag "Search Near", :name => nil, :class=> "btn btn-default" %></p>
     </div>
-  <% end %>
-</div>
-
-<div style='width: 100%;'>
-  <div id="map" style='width: 100%; height: 400px;'></div>
-</div>
-
-<div> 
-    <% @events.each do |event| %>
-        <p>Name: <%= event.name %>
-        Address: <%= event.address %>
-        Description: <%= event.description %>
-        Category: <%= event.category %>
-        Cost: $ <%= event.cost %>
-        Date/Time: <%= event.dateTime %>
-        Capacity: <%= event.capacity %>
-        Website: <%= event.website %>
-        Event Creator: <%= event.user_id %></p>
-        <%= link_to 'Show', event %>
-        <% if policy(event).edit? %>
-          <%= link_to 'Edit', edit_event_path(event) %>
-        <% end %>
-        <% if policy(event).destroy? %>
-          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-      
     <% end %>
-</div>
+  </div>
 
-<br>
-<% if policy(@events).create? %>
-  <%= link_to 'New Event', new_event_path %>
-<% end %>
+  <div style='width: 100%;'>
+    <div id="map" style='width: 100%; height: 400px;'></div>
+  </div>
 
+  <div class="events-quote">
+    <div class="inner">
+      <p class="center"> " While there is no cure for autism Early Intervention programs targeting the crucial early learning years can dramatically improve the performance of these children, setting them on the path to mainstream education and eventual independence. "</p>
+      <h1 class="center">
+        Events
+      </h1>
+    </div>
+    <div class="icon-down">
+      <a href="#footer" class="glyphicon glyphicon-chevron-down"></a>
+    </div>
+  </div>
+  <div class="container-fluid clearfix events-all">
+    <div class="row clearfix">  
+      <% @events.each do |event| %>
+      <div class="event clearfix col-lg-3 col-md-3 col-sm-4 col-xs-12">
+        <%=image_tag event.asset_url, :width => "100%", :height => "180px" %>
+        <div class="event-title">
+          <%= link_to event.name, event %>
+        </div>
+        <div class="buttons-left-admin">
+          <% if policy(event).edit? %>
+          <%= link_to 'Edit', edit_event_path(event), :class=> "btn btn-xs btn-default" %>
+          <% end %>
+          <% if policy(event).destroy? %>
+          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "btn btn-xs btn-default" %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
-
-
-<script type="text/javascript">
+    <% if policy(@events).create? %>
+    <%= link_to 'New Event', new_event_path, :class=> "btn btn-lg btn-default" %>
+    <% end %>
+  </div>
+  <script type="text/javascript">
   handler = Gmaps.build('Google');
   handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  markers = handler.addMarkers(<%= raw @hash.to_json %>);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-</script>
+    markers = handler.addMarkers(<%= raw @hash.to_json %>);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
+  </script>

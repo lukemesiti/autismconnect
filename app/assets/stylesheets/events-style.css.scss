@@ -10,3 +10,74 @@
 .search-events{
   font-family: "chunkfiveroman";
 }
+.events-all{
+  padding-bottom:10%;
+  padding-left: 10%!important;
+  padding-right: 10%!important;
+}
+
+.events-quote{
+  background-image: image-url("dots-pattern.jpg");
+  background-repeat: repeat;
+  position:relative;
+  z-index: 1;
+  height: 400px;
+  width: 100%;
+  padding-top: 55px;
+}
+
+.events-quote.inner{
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.events-quote p{
+  font-family: 'muliregular', Verdana, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: justify;
+  text-align: center
+}
+
+.events-quote h1{
+  font-family: 'chunkfiveroman', serif;
+  letter-spacing: 1px;
+}
+
+.icon-down{
+  text-align: center;
+  font-size: 30px;
+  position: relative;
+  bottom: 0;
+  margin-top: 5%;
+}
+
+.event-title{
+  position: absolute;
+  top: 170px;
+  height: 50px;
+  width: 94%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.93);
+  line-height: 50px;
+  font-size: 13px;
+  color: #120E0B;
+  font-family: 'muliregular'-webkit-body;
+  font-weight: bolder;
+}
+.event-title a:hover{
+  text-decoration: none;
+  background-color:transparent;
+  color:#df5a49;
+}
+
+.buttons-left-admin{
+  float:left;
+  margin-top:10px;
+}
+
+.event{
+  padding-top:40px;
+}
