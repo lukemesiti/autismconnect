@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:index, :show, :edit, :update]
   
   def index
-    @users = User.all
+    @users = policy_scope(User)
   end
 
   def show
@@ -14,15 +14,33 @@ class UsersController < ApplicationController
   end 
 
   def update
-    respond_to do |format|
+
+  	#look for an extra parameter coming from the admin page - if you find it, run this save method
+  	if params[:user][:source_page] == 'userAdmin'
+  	  	@user = User.find(params[:user][:user_id])
+  	  	params[:user].delete :source_page
       if @user.update(user_params)
-        format.html { redirect_to profile_path, notice: 'USer was successfully updated.' }
-        format.json { head :no_content }
+        redirect_to users_path, notice: "Permissions for #{@user.name} were successfully updated."
       else
-        format.html { render action: 'edit' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        render action: 'index'
       end
-    end
+
+  	else
+
+  		#this is the normal save method for saving a profile...
+  		respond_to do |format|
+	  		if @user.update(user_params)
+	        	format.html { redirect_to edit_user_registration_path, notice: 'User was successfully updated.' }
+	        	format.json { head :no_content }
+	        else
+	        format.html { render action: 'edit' }
+	        format.json { render json: @user.errors, status: :unprocessable_entity }
+	    	end
+    	end
+
+	end
+
+
   end
 
   private
@@ -32,7 +50,8 @@ class UsersController < ApplicationController
     end
   
   def user_params
-      params.require(:user).permit(:name, :street_address, :city, :state, :postcode, :number_of_children, :business_name, :practice_type, :website)
+      params.require(:user).permit(:name, :street_address, :city, :state, :postcode, :number_of_children, :business_name, :practice_type, :website, :email, :role_id, :forem_admin, :source_page)
   end
+
 
 end
