@@ -1,26 +1,42 @@
-<div class="nav_links">
-  <ul>
-  	<!-- Forem is actually a seperate App to the autism app! Becaus of this, when we have a partial that appears in both, we now need to specify what app each link goes to. In this case, "normal" links are prefixed with "main_app", and forem links have "forem" prefixed. -->
-    <li><%= link_to 'Home', main_app.root_path %></li>
-    <li><%= link_to 'Events', main_app.events_path %></li>
-    <li><%= link_to 'Articles', main_app.articles_path %></li>
-    <li><%= link_to 'Links', main_app.links_path %></li>
-    <li><%= link_to 'Forum', forem.root_path %></li>
-  </ul>
-
+<!-- Forem is actually a seperate App to the autism app! Becaus of this, when we have a partial that appears in both, we now need to specify what app each link goes to. In this case, "normal" links are prefixed with "main_app", and forem links have "forem" prefixed. -->
+<div class="navbar-fixed-top">
+  <div class="container-fluid">
+    <%= link_to 'Autism Connect', main_app.root_path, :class => "navbar-brand" %>
+       <div id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+             <li class="active"><%= link_to 'About', '/about' %></li>
+             
+             <li class="active"><%= link_to 'Events', main_app.events_path %></li>
+            
+             <li class="active"><%= link_to 'Information', main_app.articles_path %></li>
+             
+             <li class="active"><%= link_to 'Directory', '/users' %></li>
+             
+             <li class="active"><%= link_to 'Forum', forem.root_path %></li>
+         </ul> 
+        </div>     	
 
   <!-- The login box contains links that will let you perform actions relating to the app, and actions relating to the forum, for example - here admins can access posts to moderate. -->
   <p class="navbar-text pull-right">
-	<% if user_signed_in? %>
-	  Logged in as <strong><%= link_to current_user.email, main_app.edit_user_registration_path %></strong>.
-      	<%= link_to 'Edit profile', main_app.edit_user_registration_path, :class => 'navbar-link' %> |
-      | <%= link_to "Logout", main_app.destroy_user_session_path, :method => :delete %>
-      <% if current_user.forem_admin %>
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', main_app.edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+      <% if current_user.forem_admin? %>
           | <%= link_to "Administrate", forem.admin_root_url %>
       <% end %>
     <% else %>
-      <%= link_to "Sign up", main_app.new_user_registration_path %>
-      | <%= link_to "Sign in", main_app.new_user_session_path %>
+      <%= link_to "Sign up", main_app.new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Login", main_app.new_user_session_path, :class => 'navbar-link'  %>
     <% end %>
+
+    <form class="navbar-form navbar-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+       <button type="submit" class="btn btn-default">Submit</button>
+    </form>
   </p>
+
+  </div>
 </div>

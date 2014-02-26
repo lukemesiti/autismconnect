@@ -1,0 +1,67 @@
+@import "bootstrap";
+// Styles for homepage
+
+.center {
+  text-align: center;
+}
+
+.inner {
+  max-width: 800px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome {
+  background-image: image-url("dots-pattern.jpg");
+  background-repeat: repeat;
+  position:fixed;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  padding-top: 55px;
+}
+
+.events {
+  position: relative;
+  z-index: 10;
+  margin-top: 25%;
+  min-height: 600px;
+  width: 100%;
+  background: #45B29D;
+  padding-top: 55px;
+}
+
+.news {
+  position: relative;
+  z-index: 12;
+  margin-top: 0;
+  min-height: 600px;
+  width: 100%;
+  background: #E27A3F;
+  padding-top: 55px;
+}
+
+.welcome h1, .events h1, .news h1 {
+  font-family: 'chunkfiveroman', serif;
+  letter-spacing: 1px;
+}
+.welcome p {
+  font-family: 'muliregular', Verdana, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: justify;
+}
+.row {
+  font-family: 'muliregular', Verdana, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  margin-top: 45px;
+  text-align: center;
+}
+.col-md-4 .rowtitle,
+.col-lg-4 .rowtitle,
+.col-sm-4 .rowtitle {
+  text-transform: uppercase;
+  text-align: center;
+}
