@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
-    before_action :set_user, only: [:show, :edit, :update]
+    before_action :set_user, only: [:index, :show, :edit, :update]
+  
+  def index
+    @users = User.all
+  end
+
   def show
     @user = current_user
   end
@@ -29,10 +34,5 @@ class UsersController < ApplicationController
   def user_params
       params.require(:user).permit(:name, :street_address, :city, :state, :postcode, :number_of_children, :business_name, :practice_type, :website)
   end
-
-	def index
-		@users = User.all
-    authorize @user
-	end
 
 end
