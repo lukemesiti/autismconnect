@@ -1,35 +1,35 @@
 <h1>Users</h1>
 
-<% @professionals.each do |professional| %>
+<% @users.each do |user| %>
 
 <strong>Email:</strong><br />
-<p><%= professional.email %></p>
+<p><%= user.email %></p>
 
 <strong>Name:</strong><br />
-<p><%= professional.name %></p>
+<p><%= user.name %></p>
 
 <strong>State:</strong><br />
-<p><%= professional.state %></p>
+<p><%= user.state %></p>
 
 <strong>Postcode: </strong><br />
-<p><%= professional.postcode %></p>
+<p><%= user.postcode %></p>
 
-<strong>professional Privelages:</strong><br />
-<p><%= professional.role_id %></p>
+<strong>user Privelages:</strong><br />
+<p><%= user.role_id %></p>
 
 <h3>If a parent...</h3>
 <strong>Number of kids:</strong><br />
-<p><%= professional.number_of_children %></p>
+<p><%= user.number_of_children %></p>
 
 <h3>If profesional...</h3>
 <strong>Business Name</strong><br />
-<p><%= professional.business_name %></p>
+<p><%= user.business_name %></p>
 
 <strong>Practice Type</strong><br />
-<p><%= professional.practice_type %></p>
+<p><%= user.practice_type %></p>
 
 <strong>Website</strong><br />
-<p><%= professional.website %></p>
+<p><%= user.website %></p>
 
 <hr>
 

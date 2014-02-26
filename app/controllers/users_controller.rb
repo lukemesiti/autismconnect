@@ -2,10 +2,8 @@ class UsersController < ApplicationController
     before_action :authenticate_user!, except: [:index, :show]
     before_action :set_user, only: [:index, :show, :edit, :update]
   
-
   def index
-    role = Role.where(name: "professional").first
-	@professionals = User.where(role_id: role.id)
+    @users = policy_scope(User)
   end
 
   def show
