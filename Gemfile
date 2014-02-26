@@ -3,8 +3,12 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-#forem gem for forum functionality
-gem 'forem', :github => "radar/forem", :branch => "rails4"
+#ORIGINAL FOREM GEM for forum functionality
+#gem 'forem', :github => "radar/forem", :branch => "rails4"
+
+#Referring to Sam Peters' Repo 'cause she's awesome....
+gem 'forem', '1.0.1.beta2', :github => "sammyjopeters/forem", :branch => "rails4"
+
 
 #pagination gem --> originally to support forem but s'pose it could be used for more pagination too!
 gem 'kaminari', '0.15.1'

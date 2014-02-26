@@ -13,7 +13,7 @@ Autismconnect::Application.routes.draw do
   resources :events
   resources :links
   resources :articles
-
+  resources :users
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
 

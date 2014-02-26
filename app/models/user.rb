@@ -52,14 +52,10 @@ class User < ActiveRecord::Base
 
   #forem ..ahem, forum helpers (It's used in the gem code)
   def to_s
-    name
+    self.name || "blah"
   end
 
-  #this code was supposedly required by forem but causes a stack overflow!
-  # def email
-  #   email
-  # end
-
+  
 
 
 
