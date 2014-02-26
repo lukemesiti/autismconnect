@@ -1,7 +1,11 @@
 <!-- Forem is actually a seperate App to the autism app! Becaus of this, when we have a partial that appears in both, we now need to specify what app each link goes to. In this case, "normal" links are prefixed with "main_app", and forem links have "forem" prefixed. -->
 <div class="navbar-fixed-top">
   <div class="container-fluid">
-    <%= link_to 'Autism Connect', main_app.root_path, :class => "navbar-brand" %>
+    <div class="navbar-brand">
+      <%= link_to main_app.root_path do %>
+        <%= image_tag "logo.png" %>
+      <% end %>
+    </div>
        <div id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
              <li class="active"><%= link_to 'About', '/about' %></li>

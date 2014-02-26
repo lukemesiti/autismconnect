@@ -1,0 +1,67 @@
+<div class="welcome">
+  <div class="inner">
+    <div class="copy">
+      <p>"Autism is a neural development disorder that impacts how a person thinks, learns and experiences the world. Autism is a <em>spectrum disorder</em> that impacts everyone differently and to a varying degree, typically appearing during the first three years of life."
+      </p>
+      <h1 class="center">1 in 100 children in Australia have ASD.</h1>
+    </div>
+  </div>
+</div>
+
+
+<div class="articles">
+  <div class="inner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <!-- Using slice with each to loop through articles and display 3 at a time within the image carousel window -->
+        <% @articles_sliced.each_with_index do |articles, i| %>
+          <div class="item <%= 'active' if i == 0 %>">
+            <div class="row">
+              <% articles.each do |article| %>
+                <div class="col-md-4">
+                  <span class="rowtitle">
+                    <%= link_to article.title, article %></span><br><br><span class="rowcontent"><%= article.body.truncate(300) %></span><br><br><%= link_to 'read more', article %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Controls, left and right arrows -->
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="resources">
+  <div class="inner">
+    <div class="container-fluid">
+      <h1 class="center">Useful Links</h1>
+      <div class="row">
+      <% @links.each do |link| %>
+        <%= link.name %>: <%= link_to link.url, link %><br>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="downloads">
+  <div class="inner">
+    <div class="container-fluid">
+      <h1 class="center">Downloads</h1>
+      <div class="row">
+      <% @documents.each do |document| %>
+        <%= link_to document.name, document %> | <%= document.kind %><br>
+      <% end %>
+    </div>
+  </div>
+</div>
+
