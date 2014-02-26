@@ -32,6 +32,7 @@ class UsersController < ApplicationController
 
 	def index
 		@users = User.all
+    authorize @user
 	end
 
 end
