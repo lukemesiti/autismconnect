@@ -11,6 +11,8 @@ Autismconnect::Application.routes.draw do
   resources :links
   resources :articles
 
+  resources :charges
+
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks", registrations: "registrations" }
   resources :users, only: [:index, :show, :update]
 
