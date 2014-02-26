@@ -1,36 +1,44 @@
 <h1>Users</h1>
+<h4 class="notice"><%= notice %></h4>
 
-<% @users.each do |user| %>
+<div class="table-responsive">
+<table class="table table-hover">
+  <tr>
+  	<th>Name</th>
+  	<th>Email</th>
+  	<th>User Type (Admin, Parent or Professional)</td>
+  	<th>Make user Forum Admin?</th>
+  	<th></th>
+  </tr>
+  <% @users.each do |user| %>
+  <%= form_for user do |f| %>
+  <tr>
+  	<td>
+  	<%= user.name %>
+  	<%= f.hidden_field :user_id, value: user.id %>
+  	</td>
+  	<td><%= user.email %></td>
+  	<td>
+	  	<% Role.all.each do |role| %>
+	  	<%= f.radio_button(:role_id, role.id) %>
+	  	<%= f.label(:role_id, role.name.capitalize) %>
+	    <% end %>
+    </td>
+    <td>
+    	<%= f.check_box(:forem_admin) %>
+    </td>
+    <td>
+    <%= f.hidden_field :source_page, value: 'userAdmin' %>
+    <%= f.submit "Save", :class => "btn btn-info" %>
+    </td>
+    <% end %>
+  	<% end %>
 
-<strong>Email:</strong><br />
-<p><%= user.email %></p>
+  </tr>
 
-<strong>Name:</strong><br />
-<p><%= user.name %></p>
 
-<strong>State:</strong><br />
-<p><%= user.state %></p>
+</table>
+</div>
 
-<strong>Postcode: </strong><br />
-<p><%= user.postcode %></p>
 
-<strong>user Privelages:</strong><br />
-<p><%= user.role_id %></p>
-
-<h3>If a parent...</h3>
-<strong>Number of kids:</strong><br />
-<p><%= user.number_of_children %></p>
-
-<h3>If profesional...</h3>
-<strong>Business Name</strong><br />
-<p><%= user.business_name %></p>
-
-<strong>Practice Type</strong><br />
-<p><%= user.practice_type %></p>
-
-<strong>Website</strong><br />
-<p><%= user.website %></p>
-
-<hr>
-
-<% end %>
+</table>
