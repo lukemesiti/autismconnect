@@ -6,4 +6,7 @@ class Event < ActiveRecord::Base
   # SP 25/02/2014 acts-as-taggable relationship (alias for acts_as_taggable_on :tags)
   # gives access to information inside @events.tags
   acts_as_taggable
+
+  geocoded_by :address
+  after_validation :geocode
 end
