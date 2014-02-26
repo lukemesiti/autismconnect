@@ -1,37 +1,43 @@
 <h1>Users</h1>
 <h2>Because everybody keeps typing '/users'</h2>
 
-<% @users.each do |user| %>
 
-<strong>Email:</strong><br />
-<p><%= user.email %></p>
+<div class="table-responsive">
+<table class="table table-hover">
+  <tr>
+  	<th>Name</th>
+  	<th>Email</th>
+  	<th>User Type (Admin, Parent or Professional)</td>
+  	<th>Make user Forum Admin?</th>
+  	<th></th>
+  </tr>
+  <% @users.each do |user| %>
+  <%= form_for user do |f| %>
+  <tr>
+  	<td>
+  	<%= user.name %>
+  	<%= f.hidden_field :user_id, value: user.id %>
+  	</td>
+  	<td><%= user.email %></td>
+  	<td>
+	  	<% Role.all.each do |role| %>
+	  	<%= f.radio_button(:role_id, role.id) %>
+	  	<%= f.label(:role_id, role.name.capitalize) %>
+	    <% end %>
+    </td>
+    <td>
+    	<%= f.check_box(:forem_admin) %>
+    </td>
+    <td><%= f.submit "Save", :class => "btn btn-info" %></td>
+    <% end %>
+  	<% end %>
 
-<strong>Name:</strong><br />
-<p><%= user.name %></p>
+  </tr>
 
-<strong>State:</strong><br />
-<p><%= user.state %></p>
 
-<strong>Postcode: </strong><br />
-<p><%= user.postcode %></p>
+</table>
+</div>
 
-<strong>User Privelages:</strong><br />
-<p><%= user.role_id %></p>
 
-<h3>If a parent...</h3>
-<strong>Number of kids:</strong><br />
-<p><%= user.number_of_children %></p>
+</table>
 
-<h3>If profesional...</h3>
-<strong>Business Name</strong><br />
-<p><%= user.business_name %></p>
-
-<strong>Practice Type</strong><br />
-<p><%= user.practice_type %></p>
-
-<strong>Website</strong><br />
-<p><%= user.website %></p>
-
-<hr>
-
-<% end %>

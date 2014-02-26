@@ -11,7 +11,7 @@ Autismconnect::Application.routes.draw do
   resources :links
   resources :articles
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show, :update]
 
   # SP homepage goes to views > pages > home.html.erb
   root :to => "pages#home"
