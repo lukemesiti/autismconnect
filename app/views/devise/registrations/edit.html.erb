@@ -30,11 +30,12 @@
 
     <div class="form-group">
       <%= f.label :role_id, "set a role for this user" %>
-         <% Role.all.each do |role| %>
-         <% if current_user.admin? || !role.admin? %>
-                <%= f.radio_button(:role_id, role.id) %>
-                <%= f.label(:role_id, role.name.capitalize) %>
-         <% end %>
+      <% Role.all.each do |role| %>
+        <% if current_user.admin? || !role.admin? %>
+          <%= f.radio_button(:role_id, role.id) %>
+          <%= f.label(:role_id, role.name.capitalize) %>
+        <% end %>
+      <% end %>
     </div>
 
     <div class="form-group">

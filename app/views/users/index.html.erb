@@ -1,6 +1,5 @@
 <h1>Users</h1>
-<h2>Because everybody keeps typing '/users'</h2>
-
+<h4 class="notice"><%= notice %></h4>
 
 <div class="table-responsive">
 <table class="table table-hover">
@@ -28,7 +27,10 @@
     <td>
     	<%= f.check_box(:forem_admin) %>
     </td>
-    <td><%= f.submit "Save", :class => "btn btn-info" %></td>
+    <td>
+    <%= f.hidden_field :source_page, value: 'userAdmin' %>
+    <%= f.submit "Save", :class => "btn btn-info" %>
+    </td>
     <% end %>
   	<% end %>
 
