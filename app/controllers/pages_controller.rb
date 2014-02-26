@@ -3,13 +3,15 @@ class PagesController < ApplicationController
 	skip_before_action :authenticate_user!
 
 	def home
+    @events = Event.all.order('created_at DESC').limit(3)
+
+    @articles = Article.all
+    @article = Article.first
 	end
 
 	def about
 	end
 
-	def users
-		@users = User.all
-	end
+
 
 end
