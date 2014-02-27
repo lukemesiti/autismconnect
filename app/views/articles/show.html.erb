@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -12,7 +10,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @article.body %>
+  <%= simple_format@article.body %>
 </p>
 
 <p>
@@ -20,12 +18,12 @@
   <%= @article.user %>
 </p>
 <p>
-  <strong>Tags:</strong>
+  <strong>Categories</strong><br/>
   <% @article.tags.each do |tag| %>
-  <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }%>
+  <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }, :class => "btn btn-warning btn-sm"%>
   <% end %>
 </p>
 
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article), :class => "btn btn-default btn-sm" %>
+<%= link_to 'Back', articles_path, :class => "btn btn-default btn-sm"%>
