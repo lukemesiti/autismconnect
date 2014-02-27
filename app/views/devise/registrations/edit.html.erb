@@ -1,11 +1,11 @@
 <ul class="nav nav-tabs" id="myTab">
-  <li class="active"><a href="#profile" data-toggle="tab">Profile</a></li>
-  <li><a href="#settings" data-toggle="tab">Settings</a></li>
+  <li><a href="#profile" data-toggle="tab">Profile</a></li>
+  <li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
   <li><a href="#user-account" data-toggle="tab">Account</a></li>
 </ul>
 
 <div class="tab-content">
-  <div class="tab-pane active" id="profile">
+  <div class="tab-pane" id="profile">
     <h2>My profile</h2>
       <ul>
       <li><%= @user.name %></li>
@@ -21,7 +21,7 @@
       <li><%= @user.role.name %></li>
       </ul>
   </div>
-  <div class="tab-pane" id="settings">
+  <div class="tab-pane active" id="settings">
     <div class="form-fields-sign">
       <% if @user.role.name == "parent" %>
         <h2>Editing Parent Profile</h2>
@@ -186,6 +186,6 @@
 
 <script>
   $(function () {
-    $('#myTab a:first').tab('show')
+    $('#myTab a[href="#settings"]').tab('show')
   })
 </script>
