@@ -2,13 +2,23 @@
 
   <%= simple_form_for [forem, :admin, @forum] do |f| %>
   <div class="form-group">
-  <%= f.association :category, :include_blank => false, :class => "form-control" %>
-  <%= f.input :title, :class => "form-control" %>
-  <%= f.input :description, :as => :text, :class => "form-control" %>
-</div>
-
-  <h3><%= t('forem.admin.forum.moderator_groups') %></h3>
-  <%= f.association :moderators, :as => :check_boxes, :class => "checkbox-inline" %>
-  <%= f.submit :class => "btn btn-default" %>
+    <%= f.association :category, :include_blank => false, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, :as => :text, :class => "form-control", :rows => "10" %>
+  </div>
+  <div class="form-group">
+    <h3><%= t('forem.admin.forum.moderator_groups') %></h3>
+    <%= f.label :moderators %>
+    <%= f.check_box :moderators, :as => :check_boxes, :class => "checkbox" %>
+  </div>
+  <div class="form-group">
+    <%= f.submit :class => "btn btn-primary" %>
+  </div>
   <% end %>
 </div>
