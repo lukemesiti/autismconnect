@@ -46,7 +46,7 @@ user3.password = 'password'
 user3.role = admin
 user3.save
 
-if !Rails.production?
+if !Rails.env.production?
   # Events
   event = Event.new
   event.name = "The Lion King - autism friendly performance"
