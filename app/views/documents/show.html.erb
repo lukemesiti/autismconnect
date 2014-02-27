@@ -14,6 +14,12 @@
   <strong>User:</strong>
   <%= @document.user_id %>
 </p>
+<p>
+  <strong>Tags:</strong>
+  <% @document.tags.each do |tag| %>
+  <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }%>
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_document_path(@document) %> |
 <%= link_to 'Back', documents_path %>
