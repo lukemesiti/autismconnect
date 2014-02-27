@@ -1,8 +1,8 @@
 <!-- Forem is actually a seperate App to the autism app! Becaus of this, when we have a partial that appears in both, we now need to specify what app each link goes to. In this case, "normal" links are prefixed with "main_app", and forem links have "forem" prefixed. -->
 <nav class="navbar navbar-fixed-top navbar-default" role="navigation">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
+
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
@@ -10,32 +10,52 @@
         <span class="icon-bar"></span>
       </button>
 
-      <div class="navbar-brand">
-        <%= link_to main_app.root_path do %>
-          <%= image_tag "logo.png" %>
+      <a class="navbar-brand header-image" href="/"><span>Connect</span></a>
+
+    </div>
+    
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav element">
+        <li><%= link_to 'events', main_app.events_path %></li>
+        <li><%= link_to 'information', '/information' %></li>
+        <li><%= link_to 'directory', '/users' %></li>
+        <li><%= link_to 'forum', forem.root_path %></li> 
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle element" data-toggle="dropdown">Search <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <div class="navbar-form" role="search">
+        <%= form_tag(main_app.search_path, {method: 'get'}) do %>
+        <div class="form-group">
+          <%= text_field_tag :search_term, nil, :class => 'form-control', placeholder: 'Search' %>
+        </div>
+        <%= submit_tag 'Submit', :class => 'btn btn-default' %>
         <% end %>
       </div>
+          </ul>
+        </li>
+      </ul>
+      
 
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li><%= link_to 'about', '/about' %></li>
-          <li><%= link_to 'events', main_app.events_path %></li>
-          <li><%= link_to 'information', '/information' %></li>
-          <li><%= link_to 'directory', '/users' %></li>
-          <li><%= link_to 'forum', forem.root_path %></li>  
-        </ul>
-          
-        <form class="navbar-form navbar-left" role="search">
-          <%= form_tag(main_app.search_path, {method: 'get'}) do %>
-            <div class="form-group">
-              <%= text_field_tag :search_term, nil, :class => 'form-control', placeholder: 'Search' %>
-            </div>
-            <%= submit_tag 'Submit', :class => 'btn btn-default' %>
-          <% end %>
-        </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle element" data-toggle="dropdown">Accounts <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <% if user_signed_in? %>
+            <li><%= link_to current_user.email, main_app.edit_user_registration_path %></li>
+            <li><%= link_to 'Logout', main_app.destroy_user_session_path, method: :delete %></li>
+            <% if current_user.forem_admin? %>
+            <li><%= link_to 'Admin', forem.admin_root_url %>
+              <% end %>
+              <% else %>
+              <li><%= link_to 'Sign Up', main_app.new_user_registration_path %></li>
+              <li><%= link_to 'Login', main_app.new_user_session_path %>
+                <% end %>
+              </ul>
+            </li>
+          </ul> 
 
-        
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>

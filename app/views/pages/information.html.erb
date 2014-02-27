@@ -1,17 +1,22 @@
 <div class="welcome">
-  <div class="inner">
+  <div class="inner info-top">
     <div class="copy">
       <p>"Autism is a neural development disorder that impacts how a person thinks, learns and experiences the world. Autism is a <em>spectrum disorder</em> that impacts everyone differently and to a varying degree, typically appearing during the first three years of life."
       </p>
       <h1 class="center">1 in 100 children in Australia have ASD.</h1>
     </div>
   </div>
+
+    <div class="info-icon-down">
+      <a href="#articles" class="glyphicon glyphicon-chevron-down"></a>
+    </div>
 </div>
 
 
-<div class="articles">
+<div class="articles" id="articles">
   <div class="inner">
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <h1 class="center">Articles &amp; Advice</h1>
+    <div id="carousel-example-generic" class="carousel slide link-doco" data-ride="carousel">
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
         <!-- Using slice with each to loop through articles and display 3 at a time within the image carousel window -->
@@ -21,12 +26,14 @@
               <% articles.each do |article| %>
                 <div class="col-md-4">
                   <span class="rowtitle">
-                    <%= link_to article.title, article %></span><br><br><span class="rowcontent"><%= article.body.truncate(300) %></span><br><br><%= link_to 'read more', article %>
+                    <%= article.title %></span><br><br><span class="rowcontent"><%= article.body.truncate(300) %></span> <%= link_to 'read more', article %>
                 </div>
               <% end %>
             </div>
           </div>
         <% end %>
+        <%= link_to 'Advice Articles', articles_path, :class => "btn btn-warning btn-block button-bottom-articles"%>
+
       </div>
 
       <!-- Controls, left and right arrows -->
@@ -43,25 +50,27 @@
 <div class="resources">
   <div class="inner">
     <div class="container-fluid">
-      <h1 class="center">Useful Links</h1>
+      
       <div class="row">
+        <div class="col-md-6 link-doco">
+        <h1 class="center">Useful Links</h1>
       <% @links.each do |link| %>
         <%= link.name %>: <%= link_to link.url, link.url, :target => "blank" %><br>
       <% end %>
+      <%= link_to 'More Useful Links', links_path, :class => "btn btn-warning btn-block button-bottom"%>
+      </div>
+      <div class="col-md-6 link-doco">
+        <h1 class="center">Downloads</h1>
+      <% @documents.each do |document| %>
+        <%= link_to document.name, document.asset_url, :target => "blank" %> | <%= document.kind %><br>
+      <% end %>
+        <%= link_to 'More Documents', documents_path, :class => "btn btn-warning btn-block button-bottom"%>
+
+      </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="downloads">
-  <div class="inner">
-    <div class="container-fluid">
-      <h1 class="center">Downloads</h1>
-      <div class="row">
-      <% @documents.each do |document| %>
-        <%= link_to document.name, document.asset_url, :target => "blank" %> | <%= document.kind %><br>
-      <% end %>
-    </div>
-  </div>
-</div>
+
 

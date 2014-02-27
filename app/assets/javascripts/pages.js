@@ -18,3 +18,7 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(".icon-to-top a").smoothScroll();
 })
+
+$(document).ready(function() {
+  $(".info-icon-down a").smoothScroll();
+})
