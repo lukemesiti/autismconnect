@@ -16,7 +16,7 @@ class Article < ActiveRecord::Base
   end
 
   def abstract
-  	self.body
+  	self.subtitle
   end
 
 
