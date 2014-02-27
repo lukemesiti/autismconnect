@@ -6,5 +6,6 @@ class Document < ActiveRecord::Base
   	self.name
   end
   def abstract
+  	self.kind
   end
 end
