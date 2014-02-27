@@ -9,5 +9,6 @@ class Link < ActiveRecord::Base
   	self.name
   end
   def abstract
+  	"Web Link"
   end
 end
