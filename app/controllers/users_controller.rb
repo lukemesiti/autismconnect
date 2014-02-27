@@ -52,6 +52,9 @@ class UsersController < ApplicationController
 
 	end
 
+  def adminpanel
+  end
+
 
   end
 
