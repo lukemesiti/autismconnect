@@ -1,0 +1,31 @@
+<div class="inner">
+<h1 class="center">Find a professional</h1>
+<p>It can often be hard to get in touch with good advice. Here you can find practitioners near you - and some contact details so you can get in touch.</p>
+
+<table class="table table-striped">
+<tr>
+	<th>Business</th>
+	<th>Practice Type</th>
+	<th>Address</th>
+	<th>Contact Number</th>
+</tr>
+<% @professionals.each do |p| %>
+	<tr>
+	<td><strong><%= p.business_name %></strong><br /><em>Contact: <%= p.name %></em></td>
+	<td><%= p.practice_type %></td>
+    <% if p.street_address.present? && p.city.present? && p.state.present? %>
+		<td> <%= p.street_address %>,<br /> <%= p.city %><br /> <%= p.state %> </td>
+    <% end %>
+    <td><%= p.phone_number %></td>
+
+	</tr>
+
+ 
+
+
+
+
+<% end %>
+</table>
+
+</div>
