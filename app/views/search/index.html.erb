@@ -2,11 +2,12 @@
 
 <% if params[:search_term].present? %>
 	<% @infos.each do |info| %>
-	   <% thing = info.taggable %>
+	   <% if (thing = info.taggable).present? %>
 	   <p><%= link_to thing.user, thing.user %></p>
 	   <p><%= link_to thing, thing %></p>
 
 	   <%= content_tag :p, thing.abstract.truncate(140) if thing.abstract.present? %>
+	   <% end %>
 	<% end %>
 <% else %>
 	<p>There's nothing here.</p>

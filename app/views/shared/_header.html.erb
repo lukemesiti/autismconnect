@@ -1,5 +1,5 @@
 <!-- Forem is actually a seperate App to the autism app! Becaus of this, when we have a partial that appears in both, we now need to specify what app each link goes to. In this case, "normal" links are prefixed with "main_app", and forem links have "forem" prefixed. -->
-<div class="navbar-fixed-top">
+<div class="navbar-fixed-top" id="pagetop">
   <div class="container-fluid">
     <div class="navbar-brand">
       <%= link_to main_app.root_path do %>
@@ -36,7 +36,7 @@
 
     <div class="navbar-form navbar-right" role="search">
 
-    <%= form_tag({controller: 'search', action: 'index'}, {method: 'get'}) do %>
+    <%= form_tag({controller: '/search', action: 'index'}, {method: 'get'}) do %>
       <div class="form-group">
         <%= text_field_tag :search_term, nil, :class => 'form-control', placeholder: 'Search' %>
       </div>
