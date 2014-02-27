@@ -16,7 +16,9 @@
 </p>
 <p>
   <strong>Tags:</strong>
-  <%= @link.tag_list %>
+  <% @link.tags.each do |tag| %>
+  <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }%>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_link_path(@link) %> |
