@@ -5,3 +5,12 @@ $(function() {
     });
   });
 });
+
+
+$(document).ready(function() {
+    $(".welcome-icon-down a").smoothScroll();
+}, 500)
+
+$(document).ready(function() {
+    $(".events-icon-down a").smoothScroll();
+}, 500)
