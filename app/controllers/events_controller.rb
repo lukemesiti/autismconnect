@@ -12,10 +12,10 @@ class EventsController < ApplicationController
     else
       @events = Event.all
     end
-    @hash = Gmaps4rails.build_markers(@events) do |event, marker|
-      marker.lat event.latitude
-      marker.lng event.longitude
-      marker.infowindow event.name
+    @hash = Gmaps4rails.build_markers(@events.mapped_events) do |event, marker|
+        marker.lat event.latitude
+        marker.lng event.longitude
+        marker.infowindow event.name
     end
   end
 
