@@ -1,7 +1,7 @@
 <div class="form-inner">
   <h1 class="center">Documents and Literature</h1>
   <table class="table-responsive">
-    <table class="table table-condensed table-striped"
+    <table class="table table-condensed table-striped">
     <thead>
       <tr>
         <th>Name</th>
@@ -18,8 +18,12 @@
         <td><%= document.name %></td>
         <td><%= document.kind %></td>
         <td><%= link_to document.name, document.asset_url %></td>
-        <td><%= link_to 'Edit', edit_document_path(document), :class => "btn btn-default btn-sm" %></td>
-        <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm" %></td>
+        <% if policy(document).edit? %>
+          <td><%= link_to 'Edit', edit_document_path(document), :class => "btn btn-default btn-sm" %></td>
+        <% end %>
+        <% if policy(document).destroy? %>
+          <td><%= link_to 'Destroy', document, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-default btn-sm" %></td>
+        <% end %>
       </tr>
       <% end %>
     </tbody>
@@ -27,6 +31,7 @@
 </table>
 
 <br>
-
-<%= link_to 'New Document', new_document_path, :class => "btn btn-primary btn-sm" %>
+<% if policy(@documents).create? %>
+  <%= link_to 'New Document', new_document_path, :class => "btn btn-primary btn-sm" %>
+<% end %>
 </div>

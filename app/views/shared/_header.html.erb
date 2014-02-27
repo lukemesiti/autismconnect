@@ -19,7 +19,7 @@
       <ul class="nav navbar-nav element">
         <li><%= link_to 'events', main_app.events_path %></li>
         <li><%= link_to 'information', '/information' %></li>
-        <li><%= link_to 'directory', '/users' %></li>
+        <li><%= link_to 'directory', main_app.directory_path %></li>
         <li><%= link_to 'forum', forem.root_path %></li> 
         <li class="dropdown">
         <a href="#" class="dropdown-toggle element" data-toggle="dropdown">Search <b class="caret"></b></a>
@@ -42,10 +42,10 @@
           <a href="#" class="dropdown-toggle element" data-toggle="dropdown">Accounts <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <% if user_signed_in? %>
-            <li><%= link_to current_user.email, main_app.edit_user_registration_path %></li>
+            <li><%= link_to 'Account Settings', main_app.edit_user_registration_path %></li>
             <li><%= link_to 'Logout', main_app.destroy_user_session_path, method: :delete %></li>
             <% if current_user.forem_admin? %>
-            <li><%= link_to 'Admin', forem.admin_root_url %>
+            <li><%= link_to 'Admin Controls', main_app.adminpanel_path %>
               <% end %>
               <% else %>
               <li><%= link_to 'Sign Up', main_app.new_user_registration_path %></li>
