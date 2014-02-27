@@ -49,6 +49,10 @@ class User < ActiveRecord::Base
     user
   end
 
+  def paid!
+    self.update_attribute(:paid, true)
+  end
+
 
   #forem ..ahem, forum helpers (It's used in the gem code)
   def to_s

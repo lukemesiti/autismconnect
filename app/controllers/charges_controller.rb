@@ -1,25 +1,31 @@
 class ChargesController < ApplicationController
-    def new
-    end
+  before_action :authenticate_user!
 
-    def create
-      # Amount in cents
-      @amount = 500
+  def new
+  end
 
-      customer = Stripe::Customer.create(
-        :email => 'example@stripe.com',
-        :card  => params[:stripeToken]
-      )
+  def create
+    # Amount in cents
+    @amount = 500
 
-      charge = Stripe::Charge.create(
-        :customer    => customer.id,
-        :amount      => @amount,
-        :description => 'Rails Stripe customer',
-        :currency    => 'usd'
-      )
+    customer = Stripe::Customer.create(
+      :email => 'example@stripe.com',
+      :card  => params[:stripeToken]
+    )
 
-    rescue Stripe::CardError => e
-      flash[:error] = e.message
-      redirect_to charges_path
-    end
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => 'Rails Stripe customer',
+      :currency    => 'aud'
+    )
+
+   current_user.paid!
+   
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to charges_path
+    # fails
+
+  end
 end

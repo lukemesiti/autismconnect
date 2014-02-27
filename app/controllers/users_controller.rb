@@ -30,7 +30,13 @@ class UsersController < ApplicationController
   		#this is the normal save method for saving a profile...
   		respond_to do |format|
 	  		if @user.update(user_params)
-	        	format.html { redirect_to edit_user_registration_path, notice: 'User was successfully updated.' }
+	        	format.html { 
+              if (@user.role.name == "professional") && !@user.paid?
+                redirect_to new_charge_path
+              else
+                redirect_to edit_user_registration_path, notice: 'User was successfully updated.'
+              end
+            }
 	        	format.json { head :no_content }
 	        else
 	        format.html { render action: 'edit' }
