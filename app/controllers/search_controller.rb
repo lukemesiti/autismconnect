@@ -1,4 +1,5 @@
 class SearchController < ApplicationController
+  include ERB::Util
 
 
 	def index
@@ -10,18 +11,26 @@ class SearchController < ApplicationController
         search_term = "%#{params[:search_term]}%"
         #@infos = @infos.where("info[i].tags.[i] ilike ?", search_term)
         tag = Tag.where("name ilike ?", search_term).first
-        @infos = tag.taggings
+        if tag.present?
+            @infos = tag.taggings
         #things = tag.taggables.search(search_term)
-        search_count = @infos.count
+           @search_count = @infos.count
+        else
+          show_notice
+        end
       else
-        @infos = []
-        search_count = 0
-      end
+         show_notice
+       end
 
-      flash.now.notice = "There isn't anything on AutismConnect that match '#{params[:search_term]}'. Try some different search terms".html_safe if search_count == 0
+      
 
 	end
 
 
+def show_notice
+  @infos = []
+        @search_count = 0
+        flash.now.notice = "There isn't anything on AutismConnect that match '#{h(params[:search_term])}'. Try some different search terms".html_safe if @search_count == 0
+      end
 
 end
