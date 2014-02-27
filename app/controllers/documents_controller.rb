@@ -2,6 +2,7 @@ class DocumentsController < ApplicationController
   # SP 25/02/2014 - Remove authentication from index and detail pages. Edit/destroy/create requires login.
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_document, only: [:show, :edit, :update, :destroy]
+  rescue_from Pundit::NotAuthorizedError, :with => :unauthorized_error
 
   # GET /documents
   # GET /documents.json
@@ -22,12 +23,15 @@ class DocumentsController < ApplicationController
 
   # GET /documents/1/edit
   def edit
+    authorize @document
   end
 
   # POST /documents
   # POST /documents.json
   def create
     @document = Document.new(document_params)
+
+    authorize @document
 
     respond_to do |format|
       if @document.save
@@ -43,6 +47,8 @@ class DocumentsController < ApplicationController
   # PATCH/PUT /documents/1
   # PATCH/PUT /documents/1.json
   def update
+    authorize @document
+
     respond_to do |format|
       if @document.update(document_params)
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }
@@ -57,6 +63,8 @@ class DocumentsController < ApplicationController
   # DELETE /documents/1
   # DELETE /documents/1.json
   def destroy
+    authorize @document
+    
     @document.destroy
     respond_to do |format|
       format.html { redirect_to documents_url }
@@ -68,6 +76,10 @@ class DocumentsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_document
       @document = Document.find(params[:id])
+    end
+
+    def unauthorized_error
+      redirect_to articles_path, :alert => "You can't touch this document!"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
