@@ -21,7 +21,7 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 
 # needed to get client id and client secret
-gem 'dotenv-rails'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # authorization and role management
 gem 'pundit'
