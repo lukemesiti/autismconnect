@@ -5,9 +5,11 @@
 }
 body {
   padding-top: 75px;
-  padding-bottom: 75px;
+  padding-bottom: 100px;
 }
 .navbar-fixed-top {
+  background-image: image-url("geometry.png") !important;
+  background-repeat: repeat;
   -webkit-box-shadow: 0 8px 5px -5px #CCC;
   -mox-box-shadow: 0 8px 5px -5px #CCC;
   box-shadow: 0 8px 5px -5px #CCC;
@@ -15,19 +17,96 @@ body {
   height: 80px;
 }
 
-.navbar-fixed-top a {
-  font-family: 'muliregular', Verdana, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  text-transform: uppercase; 
+.navbar-nav {
+  font-family: 'aleoregular', Georgia, 'Times New Roman', serif;
+  font-weight: bolder;
+  font-size: 18px;
+  text-transform: uppercase;
 }
+.navbar-nav > li > a {
+  color: #303030 !important;
+}
+.navbar-nav > li > a:visited {
+  color: #303030 !important;
+}
+.navbar-nav > li > a:hover {
+  color: #45B29D !important;
+}
+.navbar-nav > li > a:active {
+  color: #45B29D !important;
+}
+
+.loggedin, .navbar-form {
+  float: right;
+}
+
+.navbar-collapse.in {
+  background-color: #FFFFFF !important;
+  margin-top: 30px !important;
+}
+
+.navbar-collapsing {
+  margin-top: 30px !important;
+}
+
 
 .navbar-fixed-bottom {
-  height: 50px;
+  background-image: image-url("geometry.png") !important;
+  background-repeat: repeat;
+  height: 65px;
   background: #FFFFFF;
   text-align: center;
+  padding-top: 10px;
 }
 
-.navbar-brand img {
-  width: 330px;
-  height: 55.20px;
+.navbar-fixed-bottom a:link {
+  font-size: 14px;
+  color: #303030;
+  text-decoration: none;
+}
+.navbar-fixed-bottom a:visited {
+  color: #303030;
+}
+.navbar-fixed-bottom a:hover {
+  color: #303030;
+  background-color: transparent;
+}
+
+.navbar-fixed-bottom .copyright {
+  font-family: 'muliregular', Verdana, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+.nav > li > a {
+  padding:10px 10px;
+} 
+.navbar-nav > li > a {
+  font-size:13px;
+  padding-top:25px;
+}
+.header-image{
+  background-image: url(/assets/logo.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-size: 45px;
+  line-height: 60px;
+  margin-top: 20px;
+}
+.header-image span{
+  visibility: hidden; 
+}
+.link-doco{
+  min-height:300px;
+}
+.button-bottom{
+  position:absolute;
+  bottom:0;
+  width: 80%;
+  margin: 0px 35px;
+}
+.button-bottom-articles{
+  width:20%;
+  margin:20px auto;
+}
+.info-top{
+  margin-top:5%;
 }
