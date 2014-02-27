@@ -24,7 +24,7 @@
           <div class="item <%= 'active' if i == 0 %>">
             <div class="row">
               <% articles.each do |article| %>
-                <div class="col-md-4">
+                <div class="col-md-4 carouselitems">
                   <span class="rowtitle">
                     <%= article.title %></span><br><br><span class="rowcontent"><%= article.body.truncate(300) %></span> <%= link_to 'read more', article %>
                 </div>
