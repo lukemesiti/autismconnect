@@ -12,4 +12,12 @@ class Event < ActiveRecord::Base
 
   mount_uploader :asset, AssetUploader
 
+  scope :mapped_events, -> { where("latitude IS NOT NULL") }
+
+  def to_s
+  	self.name
+  end
+  def abstract
+  end
+
 end
