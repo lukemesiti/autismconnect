@@ -1,6 +1,9 @@
-<h1>Editing document</h1>
+<div class="form-fields-sign-edit-event clearfix">
 
-<%= render 'form' %>
+  <h1>Editing document</h1>
 
-<%= link_to 'Show', @document %> |
-<%= link_to 'Back', documents_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @document, :class=> "btn btn-default btn-sm" %> |
+  <%= link_to 'Back', documents_path, :class=> "btn btn-default btn-sm" %>
+</div>

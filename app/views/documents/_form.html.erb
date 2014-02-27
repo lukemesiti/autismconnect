@@ -11,23 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :kind %><br>
-    <%= f.text_field :kind %>
+    <%= f.text_field :kind, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+  <div class="form-group">
+    <%= f.hidden_field :user_id, value: current_user.id, :class => "form-control" %>
+    Created by: <%= current_user.name%>  
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :asset, "upload a file" %><br>
-    <%= f.file_field :asset %>
+    <%= f.file_field :asset, :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary btn-sm" %>
   </div>
 <% end %>

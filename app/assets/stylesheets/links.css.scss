@@ -1,3 +1,29 @@
 // Place all the styles related to the Links controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.form-inner{
+  width:80%;
+  margin:0 auto;
+  font-family:"mulilight";
+}
+.form-inner a:hover{
+  text-decoration:none;
+  background-color:transparent;
+  color:#df5a49;
+}
+.form-inner h1{
+  font-family: "chunkfiveroman";
+}
+.form-inner td{
+  font-family: "mulilight";
+  font-size:13px;
+  line-height: 20px!important;
+}
+.form-inner th{
+  font-family:"aleoregular";
+  font-weight:900;
+  font-size:18px;
+}
+.table{
+  margin-top:30px;
+}
