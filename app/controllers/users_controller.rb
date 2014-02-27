@@ -10,6 +10,12 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def directory
+    #@users = User.all
+    # I know there's a DRYer version of this, but I can't for the life of me remember it!! Refactor if it comes to mind!!
+    @professionals = User.where role_id: (Role.find_by name: 'professional')
+  end
+
   def edit
   end 
 
