@@ -45,9 +45,12 @@
       <strong>User:</strong>
       <%= @event.user %>
     </p>
-    <strong>Current Tags:</strong>
-    <%= @event.tag_list %>
-  </p>
+    <p>
+      <strong>Tags:</strong>
+      <% @event.tags.each do |tag| %>
+      <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }%>
+      <% end %>
+    </p>
 
   <p>
     <strong>longitude and latitude:</strong>
