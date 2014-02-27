@@ -35,7 +35,7 @@
 <br>
 
 <% if policy(@articles).create? %>
-  <%= link_to 'New Article', new_article_path %>
+  <%= link_to 'New Article', new_article_path, :class => "btn btn-sm btn-primary" %>
 <% end %>
 
 </div>
