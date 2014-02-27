@@ -1,33 +1,35 @@
-<%= form_for(@link) do |f| %>
+  <%= form_for(@link) do |f| %>
   <% if @link.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
-
-      <ul>
+  <div id="error_explanation">
+    <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
+    <ul>
       <% @link.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      <li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+  </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :url %><br>
-    <%= f.text_field :url %>
+    <%= f.text_field :url, :class => "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
+  <div class="form-group">
+    <%= f.hidden_field :user_id, value: current_user.id, :class => "form-control" %>
+    Created by: <%= current_user.name%>  
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :tag_list, "Tags - seperated by commas" %><br>
-    <%= f.text_field :tag_list, :required => true %>
+    <%= f.text_field :tag_list, :required => true, :class => "form-control" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => "btn btn-primary btn-sm" %>
   </div>
-<% end %>
+  <% end %>
+
+
+
