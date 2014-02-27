@@ -1,6 +1,9 @@
-<h1>Editing link</h1>
+<div class="form-fields-sign-edit-event clearfix">
 
-<%= render 'form' %>
+  <h1>Editing link</h1>
 
-<%= link_to 'Show', @link %> |
-<%= link_to 'Back', links_path %>
+  <%= render 'form' %>
+
+  <%= link_to 'Show', @link, :class => "btn btn-default btn-sm" %>
+  <%= link_to 'Back', links_path, :class => "btn btn-default btn-sm" %>
+</div>
