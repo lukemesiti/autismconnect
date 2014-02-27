@@ -1,7 +1,9 @@
 <h2>Search Results</h2>
 
 <% @infos.each do |info| %>
+   <% thing = info.taggable %>
+   <p><%= link_to thing.user, thing.user %></p>
+   <p><%= link_to thing, thing %></p>
 
-<p><%= info.user_id %></p>
-
+   <%= content_tag :p, thing.abstract.truncate(140) if thing.abstract.present? %>
 <% end %>
