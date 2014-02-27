@@ -14,4 +14,10 @@ class Event < ActiveRecord::Base
 
   scope :mapped_events, -> { where("latitude IS NOT NULL") }
 
+  def to_s
+  	self.name
+  end
+  def abstract
+  end
+
 end
