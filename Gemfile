@@ -74,6 +74,9 @@ gem 'geocoder'
 # google maps
 gem 'gmaps4rails'
 
+# for stripe payments
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
