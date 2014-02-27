@@ -46,7 +46,7 @@
       <h1 class="center">Useful Links</h1>
       <div class="row">
       <% @links.each do |link| %>
-        <%= link.name %>: <%= link_to link.url, link %><br>
+        <%= link.name %>: <%= link_to link.url, link.url, :target => "blank" %><br>
       <% end %>
       </div>
     </div>
@@ -59,7 +59,7 @@
       <h1 class="center">Downloads</h1>
       <div class="row">
       <% @documents.each do |document| %>
-        <%= link_to document.name, document %> | <%= document.kind %><br>
+        <%= link_to document.name, document.asset_url, :target => "blank" %> | <%= document.kind %><br>
       <% end %>
     </div>
   </div>
