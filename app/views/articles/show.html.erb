@@ -21,7 +21,9 @@
 </p>
 <p>
   <strong>Tags:</strong>
-  <%= @article.tag_list %>
+  <% @article.tags.each do |tag| %>
+  <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }%>
+<% end %>
 </p>
 
 

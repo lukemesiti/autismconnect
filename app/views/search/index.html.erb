@@ -1,0 +1,14 @@
+<h2><%= @search_count.present? ? pluralize(@search_count, "Search Result") : "Please search" %></h2>
+
+<% if params[:search_term].present? %>
+	<% @infos.each do |info| %>
+	   <% if (thing = info.taggable).present? %>
+	   <p><%= link_to thing.user, thing.user %></p>
+	   <p><%= link_to thing, thing %></p>
+
+	   <%= content_tag :p, thing.abstract.truncate(140) if thing.abstract.present? %>
+	   <% end %>
+	<% end %>
+<% else %>
+	<p>There's nothing here.</p>
+<% end %>

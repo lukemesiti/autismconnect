@@ -20,6 +20,26 @@
   height: 100%;
   width: 100%;
   padding-top: 55px;
+  margin-top: -55px;
+}
+.welcome-icon-down {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 55px;
+}
+.welcome-icon-down > a {
+  background-color: transparent !important;
+  text-decoration: none;
+  color: #303030;
+}
+.welcome-icon-down > a:hover {
+  color: #45B29D;
+}
+.welcome-icon-down > a:active {
+  color: #45B29D;
+}
+.welcome-icon-down > a:visited {
+  color: #303030;
 }
 
 .events {
@@ -29,7 +49,26 @@
   min-height: 600px;
   width: 100%;
   background: #45B29D;
+  padding-top: 70px;
+}
+.events-icon-down {
+  text-align: center;
+  font-size: 30px;
   padding-top: 55px;
+}
+.events-icon-down > a {
+  background-color: transparent !important;
+  text-decoration: none;
+  color: #303030;
+}
+.events-icon-down > a:hover {
+  color: #E27A3F;
+}
+.events-icon-down > a:active {
+  color: #E27A3F;
+}
+.events-icon-down > a:visited {
+  color: #303030;
 }
 
 .news {
@@ -39,7 +78,7 @@
   min-height: 600px;
   width: 100%;
   background: #E27A3F;
-  padding-top: 55px;
+  padding-top: 70px;
 }
 
 .articles {
@@ -49,7 +88,7 @@
   min-height: 600px;
   width: 100%;
   background: #DF5A49;
-  padding-top: 55px;
+  padding-top: 70px;
 }
 
 .resources {
@@ -59,7 +98,7 @@
   min-height: 600px;
   width: 100%;
   background: #334D5C;
-  padding-top: 55px;
+  padding-top: 70px;
 }
 
 .downloads {
@@ -69,7 +108,7 @@
   min-height: 600px;
   width: 100%;
   background: #E27A3F;
-  padding-top: 55px;
+  padding-top: 70px;
 }
 
 .welcome h1, .events h1, .news h1, .articles h1, .resources h1 {
