@@ -25,11 +25,14 @@
 .welcome-icon-down {
   text-align: center;
   font-size: 30px;
-  padding-top: 55px;
+  padding-top: 25px;
 }
-.welcome-icon-down > a {
+.welcome-icon-down > a:link {
   background-color: transparent !important;
   text-decoration: none;
+  color: #303030;
+}
+.welcome-icon-down > a:visited {
   color: #303030;
 }
 .welcome-icon-down > a:hover {
@@ -38,9 +41,7 @@
 .welcome-icon-down > a:active {
   color: #45B29D;
 }
-.welcome-icon-down > a:visited {
-  color: #303030;
-}
+
 
 .events {
   position: relative;
@@ -54,11 +55,14 @@
 .events-icon-down {
   text-align: center;
   font-size: 30px;
-  padding-top: 55px;
+  padding-top: 25px;
 }
-.events-icon-down > a {
+.events-icon-down > a:link {
   background-color: transparent !important;
   text-decoration: none;
+  color: #303030;
+}
+.events-icon-down > a:visited {
   color: #303030;
 }
 .events-icon-down > a:hover {
@@ -66,9 +70,6 @@
 }
 .events-icon-down > a:active {
   color: #E27A3F;
-}
-.events-icon-down > a:visited {
-  color: #303030;
 }
 
 .news {
@@ -80,6 +81,26 @@
   background: #E27A3F;
   padding-top: 70px;
 }
+.icon-to-top {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 25px;
+}
+.icon-to-top > a:link {
+  background-color: transparent !important;
+  text-decoration: none;
+  color: #303030;
+}
+.icon-to-top > a:visited {
+  color: #303030;
+}
+.icon-to-top > a:hover {
+  color: #FFFFFF;
+}
+.icon-to-top > a:active {
+  color: #FFFFFF;
+}
+
 
 .articles {
   position: relative;

@@ -15,6 +15,11 @@ body {
   height: 80px;
 }
 
+.navbar-brand img {
+  width: 330px;
+  height: 55.20px;
+}
+
 .navbar-fixed-top a {
   font-family: 'muliregular', Verdana, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -22,12 +27,30 @@ body {
 }
 
 .navbar-fixed-bottom {
-  height: 50px;
+  background-image: image-url("geometry.png") !important;
+  background-repeat: repeat;
+  background-repeat: repeat;
+  height: 65px;
   background: #FFFFFF;
   text-align: center;
+  padding-top: 10px;
 }
 
-.navbar-brand img {
-  width: 330px;
-  height: 55.20px;
+.navbar-fixed-bottom a:link {
+  font-size: 14px;
+  color: #303030;
+  text-decoration: none;
 }
+.navbar-fixed-bottom a:visited {
+  color: #303030;
+}
+.navbar-fixed-bottom a:hover {
+  color: #303030;
+  background-color: transparent;
+}
+
+.navbar-fixed-bottom .copyright {
+  font-family: 'muliregular', Verdana, Helvetica, Arial, sans-serif;
+  font-size: 12px;
+}
+

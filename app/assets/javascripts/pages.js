@@ -14,3 +14,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $(".events-icon-down a").smoothScroll();
 }, 500)
+
+$(document).ready(function() {
+  $(".icon-to-top a").smoothScroll();
+})
