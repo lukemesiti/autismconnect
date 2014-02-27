@@ -1,10 +1,10 @@
-class ArticlePolicy
+class DocumentPolicy
 
-  attr_reader :user, :article
+  attr_reader :user, :document
 
-  def initialize(user, article)
+  def initialize(user, document)
     @user = user
-    @article = article
+    @document = document
   end
 
   def create?
@@ -17,7 +17,7 @@ class ArticlePolicy
 
   def destroy?
     if user.present?
-      user == article.user || user.role.name == "admin"
+      user == document.user || user.role.name == "admin"
     else
       false
     end
@@ -25,7 +25,7 @@ class ArticlePolicy
 
   def update?
     if user.present?
-      user == article.user || user.role.name == "admin"
+      user == document.user || user.role.name == "admin"
     else
       false
     end
@@ -33,7 +33,7 @@ class ArticlePolicy
 
   def edit?
     if user.present?
-      user == article.user || user.role.name == "admin"
+      user == document.user || user.role.name == "admin"
     else
       false
     end
