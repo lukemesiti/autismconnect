@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   before_create :set_default_role
 
   def set_default_role
-    self.role = Role.default_role
+    self.role = Role.default_role if role.blank? && role_id.blank?
   end
 
   def admin?
