@@ -5,20 +5,58 @@
   margin-right: auto;
 }
 
-.forum-inner h1{
+.forum-inner h1, .forum-edit-inner h1{
   font-family: "aleoregular";
 }
 .forum-inner h2{
   font-family: "aleoregular";
   font-size:16px;
 }
-.forum-inner h2 a:hover{
+.forum-inner h2 a:hover, .forum-inner td a:hover, .forum-edit-inner td a:hover, .forum-edit-inner h2 a:hover{
   text-decoration: none;
   background-color: transparent;
   color:#ffcc00;
 }
-.forum-inner p{
+
+.forum-inner p, .forum-edit-inner p{
   font-family: "mulilight";
   line-height:20px;
   font-size:14px;
+}
+#forum_topic_links{
+  float:right;
+}
+.forum-edit-inner{
+  max-width:60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.forum-edit-inner h2{
+  font-family: "aleoregular";
+  text-align: center;
+}
+.subject{
+  font-family:"aleoregular";
+  font-weight: bold;
+}
+
+.btn-right{
+  float:right;
+}
+
+#posts{
+  border-top:1px solid #ccc;
+  margin-top:20px;
+}
+.contents-two{
+  margin-top:50px;
+}
+
+.forum-inner-admin{
+  max-width: 30%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align:center;
 }
