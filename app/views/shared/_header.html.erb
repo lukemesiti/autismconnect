@@ -23,11 +23,11 @@
   <!-- The login box contains links that will let you perform actions relating to the app, and actions relating to the forum, for example - here admins can access posts to moderate. -->
   <p class="navbar-text pull-right">
     <% if user_signed_in? %>
-      Logged in as <strong><%= current_user.email %></strong>.
+      Logged in as <strong><%= current_user.email %></strong><br />
       <%= link_to 'Account Settings', main_app.edit_user_registration_path, :class => 'navbar-link' %> |
       <%= link_to "Logout", main_app.destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% if current_user.forem_admin? %>
-          | <%= link_to "Administrate", forem.admin_root_url %>
+      <% if current_user.admin? %>
+          | <%= link_to "Admin Controls", main_app.adminpanel_path %>
       <% end %>
     <% else %>
       <%= link_to "Sign up", main_app.new_user_registration_path, :class => 'navbar-link'  %> |

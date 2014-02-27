@@ -22,6 +22,7 @@ Autismconnect::Application.routes.draw do
   post '/profile' => 'users#update'
   get '/search' => 'search#index', :as => :search
   get '/directory' => 'users#directory', :as => :directory
+  get '/adminpanel' => 'users#adminpanel', :as => :adminpanel
 
   # SP 24/2/2homepage goes to views > pages > home.html.erb
 
