@@ -8,6 +8,8 @@ body {
   padding-bottom: 75px;
 }
 .navbar-fixed-top {
+  background-image: image-url("geometry.png") !important;
+  background-repeat: repeat;
   -webkit-box-shadow: 0 8px 5px -5px #CCC;
   -mox-box-shadow: 0 8px 5px -5px #CCC;
   box-shadow: 0 8px 5px -5px #CCC;
@@ -28,7 +30,6 @@ body {
 
 .navbar-fixed-bottom {
   background-image: image-url("geometry.png") !important;
-  background-repeat: repeat;
   background-repeat: repeat;
   height: 65px;
   background: #FFFFFF;

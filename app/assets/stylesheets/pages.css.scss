@@ -72,6 +72,8 @@
   color: #E27A3F;
 }
 
+
+
 .news {
   position: relative;
   z-index: 12;
@@ -159,6 +161,13 @@
 
 .col-md-4, .col-lg-4, .col-sm-4 {
   display: block;
+  // margin: 0 5px;
+  min-height: 375px;
+  // padding: 5px;
+}
+.col-md-4:hover, .col-lg-4:hover, .col-sm-4:hover {
+  background: #FFFFFF;
+  border-radius: 25px;
 }
 
 .carousel-control.left, .carousel-control.right{
