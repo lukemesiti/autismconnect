@@ -18,9 +18,9 @@
     <h1 class="center">Upcoming Events</h1>
       <div class="row">
         <% @events.each do |event| %>
-          <div class="col-md-4 col-lg-4 col-sm-4">
+          <div class="col-md-4 col-lg-4 col-sm-4 recentevents">
             <div class="info-text-box">
-              <span class="rowtitle"><%= event.name %></span><br><br><%= event.description.truncate(300) %></div>
+              <span class="rowtitle"><%= link_to event.name, event %></span><br><br><%= event.description.truncate(300) %></div>
             </div>
         <% end %>
       </div>
@@ -39,7 +39,9 @@
     <h1 class="center">News</h1>
       <div class="row">
         <% @articles.each do |article| %>
-          <div class="col-md-4 col-lg-4 col-sm-4"><span class="rowtitle"><%= article.title %></span><br><br><spanclass="rowcontent"><%= article.body.truncate(300) %></span></div>
+          <div class="col-md-4 col-lg-4 col-sm-4 recentnews"><span class="rowtitle"><%= link_to article.title, article %></span><br><br><spanclass="rowcontent"><%= article.body.truncate(300) %>
+          <br><br><%= link_to 'read more', article, :class => 'read'%>
+          </span></div>
         <% end %>
       </div>
     </div>
