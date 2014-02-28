@@ -3,10 +3,13 @@
   padding: 0px;
   height: 100%;
 }
-body {
-  padding-top: 75px;
-  padding-bottom: 100px;
+
+.maincontainer {
+  overflow: auto;
+  padding-bottom: 65px;
+  padding-top: 80px;
 }
+
 .navbar-fixed-top {
   background-image: image-url("geometry.png") !important;
   background-repeat: repeat;
@@ -15,6 +18,7 @@ body {
   box-shadow: 0 8px 5px -5px #CCC;
   background: #FFFFFF;
   height: 80px;
+  margin-bottom:-80px;
 }
 
 .navbar-nav {
@@ -56,7 +60,8 @@ body {
   height: 65px;
   background: #FFFFFF;
   text-align: center;
-  padding-top: 10px;
+  margin-top: -65px;
+  padding-top: 15px;
 }
 
 .navbar-fixed-bottom a:link {
