@@ -1,9 +1,10 @@
 <div class="search-events">
-  <h1>Listing events</h1>
+  <h1>Events</h1>
+  <h4>Events planned by our members!</h4>
   <%= form_tag events_path, :class=> "form-inline", :method => :get do%>
   <div class="form-group">
-    <p><%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Enter Address" %>
-      <%= submit_tag "Search Near", :name => nil, :class=> "btn btn-default" %></p>
+    <p><%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "E.G Sydney, NSW" %><br /><br />
+      <%= submit_tag "Search Events", :name => nil, :class=> "btn btn-default" %></p>
     </div>
     <% end %>
   </div>
@@ -16,7 +17,7 @@
     <div class="inner">
       <p class="center"> " While there is no cure for autism Early Intervention programs targeting the crucial early learning years can dramatically improve the performance of these children, setting them on the path to mainstream education and eventual independence. "</p>
       <h1 class="center">
-        Events
+        Recent Events
       </h1>
     </div>
     <div class="icon-down">
@@ -44,7 +45,7 @@
     </div>
 
     <% if policy(@events).create? %>
-    <%= link_to 'New Event', new_event_path, :class=> "btn btn-lg btn-default" %>
+    <%= link_to 'Create New Event', new_event_path, :class=> "btn btn-lg btn-default" %>
     <% end %>
   </div>
   <script type="text/javascript">
