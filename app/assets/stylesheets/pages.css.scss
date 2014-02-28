@@ -14,21 +14,24 @@
   margin-right: auto;
 }
 
+.directory-inner h1 {
+  font-family: 'chunkfiveroman', Georgia, 'Times New Roman', serif;
+}
+
 .aboutus {
   background-image: image-url("dots-pattern.jpg");
   background-repeat: repeat;
-  position: fixed;
-  height: 100%;
-  width: 100%;
   padding-top: 30px;
+  padding-bottom: 100px;
   margin-top: -55px;
+  text-align: center;
 }
 .aboutus img {
-  max-width: 99%;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
+  max-width: 50%;
   border-radius: 25px;
 }
+
 .aboutus h1 {
   color: #334D5C;
 }
@@ -129,15 +132,26 @@
   color: #303030;
 }
 
+.link-doco {
+  color: #FFFFFF;
+}
 .link-doco h1, .articles h1 {
   color: #FFFFFF;
 }
 
-.link-doco {
+.linkkk a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.linkkk a:visited {
   color: #FFFFFF;
 }
-.link-doco a {
-  color: #FFFFFF;
+.linkkk a:hover {
+  color: #DF5A49;
+  background-color: transparent;
+}
+.linkkk a:active {
+  color: #DF5A49;
 }
 
 .news {

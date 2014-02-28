@@ -76,6 +76,19 @@ body {
   font-family: 'muliregular', Verdana, Helvetica, Arial, sans-serif;
   font-size: 12px;
 }
+.navbar-fixed-bottom a {
+  color: #303030;
+}
+.navbar-fixed-bottom a:visited {
+  color: #303030;
+}
+.navbar-fixed-bottom a:hover {
+  color: #DF5A49;
+}
+.navbar-fixed-bottom a:active {
+  color: #DF5A49;
+}
+
 .nav > li > a {
   padding:10px 10px;
 } 
