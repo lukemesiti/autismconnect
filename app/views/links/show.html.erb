@@ -1,25 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="article-show-inner">
+  
+  <h1>"<%= @link.name %>"</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @link.name %>
-</p>
+  <h2>Link to - <%= @link.url %></h2>
 
-<p>
-  <strong>Url:</strong>
-  <%= @link.url %>
-</p>
+  <p>Uploaded by <%= @link.user.name %></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @link.user %>
-</p>
-<p>
-  <strong>Tags:</strong>
-  <% @link.tags.each do |tag| %>
-  <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }%>
-  <% end %>
-</p>
+  <p><%= link_to 'Go to Website', "http://" + @link.url, :class => "btn btn-success" %></p>
 
-<%= link_to 'Edit', edit_link_path(@link) %> |
-<%= link_to 'Back', links_path %>
+  <p>
+
+    <h2>Categories</h2><br/>
+    <% @link.tags.each do |tag| %>
+    <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }, :class => "btn btn-warning btn-sm"%>
+    <% end %>
+  </p>
+
+
+  <%= link_to 'Edit', edit_link_path(@link), :class => "btn btn-default btn-sm" %>
+  <%= link_to 'Back', links_path, :class => "btn btn-default btn-sm"%>
+</div>

@@ -27,6 +27,10 @@
     <%= f.label :asset, "upload a file" %><br>
     <%= f.file_field :asset, :class => "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :tag_list, "Tags - seperated by commas" %><br>
+    <%= f.text_field :tag_list, :class => "form-control", :required => true %>
+  </div>
   <div class="actions">
     <%= f.submit :class => "btn btn-primary btn-sm" %>
   </div>

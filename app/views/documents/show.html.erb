@@ -1,25 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="article-show-inner">
+  
+  <h1>"<%= @document.name %>"</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @document.name %>
-</p>
+  <h2><%= @document.kind %></h2>
 
-<p>
-  <strong>Kind:</strong>
-  <%= @document.kind %>
-</p>
+  <p>Uploaded by <%= @document.user.name %></p>
+  <p>
 
-<p>
-  <strong>User:</strong>
-  <%= @document.user_id %>
-</p>
-<p>
-  <strong>Tags:</strong>
-  <% @document.tags.each do |tag| %>
-  <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }%>
-  <% end %>
-</p>
+    <h2>Categories</h2><br/>
+    <% @document.tags.each do |tag| %>
+    <%= link_to tag.name, { controller: :search, action: :index, search_term: tag.name }, :class => "btn btn-warning btn-sm"%>
+    <% end %>
+  </p>
 
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
+
+
+
+  <%= link_to 'Edit', edit_document_path(@document), :class => "btn btn-default btn-sm" %>
+  <%= link_to 'Back', documents_path, :class => "btn btn-default btn-sm"%>
+</div>
