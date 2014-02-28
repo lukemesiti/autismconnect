@@ -20,5 +20,4 @@ class Event < ActiveRecord::Base
   def abstract
     "A " + self.category + " event scheduled for " + self.dateTime.to_s
   end
-
 end
