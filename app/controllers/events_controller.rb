@@ -31,11 +31,13 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+    @title = "Create Event"
     @event = Event.new
   end
 
   # GET /events/1/edit
   def edit
+    @title = "Edit Event"
     authorize @event
   end
 
