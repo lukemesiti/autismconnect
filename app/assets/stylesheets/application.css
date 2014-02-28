@@ -12,11 +12,28 @@
  *= require_tree .
  */
 
-.notice{
-	color: blue;
-	padding-top: 55px;
-}
+ .communications{
+ 	margin: 0 auto;
+ 	padding-top: 55px;
+ 	width: 60%;
+ }
 
 .alert{
-	
+	color: #E27A3F;
+	margin: 0 auto;
+	border: 1px dotted #E27A3F;
+	padding: 3px 6px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+
+.notice{
+	color: #45B29D;
+	margin: 0 auto;
+	border: 1px dotted #45B29D;
+	padding: 3px 6px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
 }

@@ -5,6 +5,8 @@ class Link < ActiveRecord::Base
   # gives access to information inside @links.tags
   acts_as_taggable
 
+  
+
   def to_s
   	self.name
   end
