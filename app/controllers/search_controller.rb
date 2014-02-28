@@ -28,7 +28,7 @@ class SearchController < ApplicationController
   def show_notice
     @infos = []
     @search_count = 0
-    flash.now.notice = "There isn't anything on AutismConnect that match '#{h(params[:search_term])}'. Try some different search terms".html_safe if @search_count == 0
+    flash.now.alert = "There isn't anything on AutismConnect that match '#{h(params[:search_term])}'. Try some different search terms".html_safe if @search_count == 0
   end
 
 end
