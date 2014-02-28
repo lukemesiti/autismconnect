@@ -13,11 +13,12 @@ class PagesController < ApplicationController
 
   def information
     @articles = Article.all
-    @links = Link.all
-    @documents = Document.all
+    @links = Link.all.order('created_at DESC').limit(5)
+    @documents = Document.all.order('created_at DESC').limit(5)
 
     # to display 3 articles in carousel at a time
     @articles_sliced = @articles.each_slice(3)
+
   end
 
 

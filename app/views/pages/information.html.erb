@@ -32,7 +32,7 @@
             </div>
           </div>
         <% end %>
-        <%= link_to 'Advice Articles', articles_path, :class => "btn btn-warning btn-block button-bottom-articles"%>
+        <%= link_to 'More Articles', articles_path, :class => "btn btn-warning btn-block button-bottom-articles"%>
 
       </div>
 
@@ -55,14 +55,14 @@
         <div class="col-md-6 link-doco">
         <h1 class="center">Useful Links</h1>
       <% @links.each do |link| %>
-        <%= link.name %>: <%= link_to link.url, link.url, :target => "blank" %><br>
+        <strong><%= link.name %></strong>: <span class="linkkk"><%= link_to link.url, link.url, :target => "blank" %></span><br><br>
       <% end %>
       <%= link_to 'More Useful Links', links_path, :class => "btn btn-warning btn-block button-bottom"%>
       </div>
       <div class="col-md-6 link-doco">
         <h1 class="center">Downloads</h1>
       <% @documents.each do |document| %>
-        <%= link_to document.name, document.asset_url, :target => "blank" %> | <%= document.kind %><br>
+        <span class="linkkk"><%= link_to document.name, document.asset_url, :target => "blank" %> | <%= document.kind %></span><br><br>
       <% end %>
         <%= link_to 'More Documents', documents_path, :class => "btn btn-warning btn-block button-bottom"%>
 
